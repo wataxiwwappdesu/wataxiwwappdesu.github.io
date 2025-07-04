@@ -5,8 +5,8 @@
     
     <entry>
       <title>My First Post</title>
-      <link href="/2021/01/01/pp-first-post/"/>
-      <url>/2021/01/01/pp-first-post/</url>
+      <link href="/2025/07/04/pp-first-post/"/>
+      <url>/2025/07/04/pp-first-post/</url>
       
         <content type="html"><![CDATA[<p>This is my first post.</p>]]></content>
       
@@ -18,19 +18,22 @@
       </categories>
       
       
-        <tags>
-            
-            <tag> first </tag>
-            
-            <tag> post </tag>
-            
-        </tags>
-      
     </entry>
     
     
   
   
+    
+    
+    <entry>
+      <title>link</title>
+      <link href="/link/index.html"/>
+      <url>/link/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
     
     
     <entry>
@@ -48,17 +51,6 @@
       <title>Music</title>
       <link href="/music/index.html"/>
       <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>link</title>
-      <link href="/link/index.html"/>
-      <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
