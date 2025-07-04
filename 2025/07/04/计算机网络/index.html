@@ -1,0 +1,908 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>PP&quot;s Blog | PP&quot;s Blog</title><meta name="author" content="PP"><meta name="copyright" content="PP"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="计算机网络[TOC] 一、计算机网络和Internet计网定义两台以上具有独立操作系统的计算机通过某些介质连接而成的&#x3D;&#x3D;相互共享软硬件资&#x3D;&#x3D;源的集合体 向用户提供的most important功能：连通 共享 具体构成 服务描述 protocol  Internet 标准IETF RFC 网络边缘 主机：客户机和服务器 服务器一般位于数据中心内  接入网络，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PP&quot;s Blog">
+<meta property="og:url" content="https://pp-blog-xi.vercel.app/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="PP&quot;s Blog">
+<meta property="og:description" content="计算机网络[TOC] 一、计算机网络和Internet计网定义两台以上具有独立操作系统的计算机通过某些介质连接而成的&#x3D;&#x3D;相互共享软硬件资&#x3D;&#x3D;源的集合体 向用户提供的most important功能：连通 共享 具体构成 服务描述 protocol  Internet 标准IETF RFC 网络边缘 主机：客户机和服务器 服务器一般位于数据中心内  接入网络，">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pp-blog-xi.vercel.app/img/PP.png">
+<meta property="article:published_time" content="2025-07-04T04:32:42.690Z">
+<meta property="article:modified_time" content="2025-07-04T04:33:02.453Z">
+<meta property="article:author" content="PP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pp-blog-xi.vercel.app/img/PP.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://pp-blog-xi.vercel.app/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/",
+  "image": "https://pp-blog-xi.vercel.app/img/PP.png",
+  "datePublished": "2025-07-04T04:32:42.690Z",
+  "dateModified": "2025-07-04T04:33:02.453Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "PP",
+      "url": "https://pp-blog-xi.vercel.app/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/wsde.ico"><link rel="canonical" href="https://pp-blog-xi.vercel.app/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'PP"s Blog',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/bg.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/PP.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/up.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">PP&quot;s Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">PP&quot;s Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group hide"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Untitled</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-04T04:32:42.690Z" title="Created 2025-07-04 12:32:42">2025-07-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-04T04:33:02.453Z" title="Updated 2025-07-04 12:33:02">2025-07-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>[TOC]</p>
+<h2 id="一、计算机网络和Internet"><a href="#一、计算机网络和Internet" class="headerlink" title="一、计算机网络和Internet"></a>一、计算机网络和Internet</h2><h4 id="计网定义"><a href="#计网定义" class="headerlink" title="计网定义"></a>计网定义</h4><p>两台以上具有独立操作系统的计算机通过某些介质连接而成的&#x3D;&#x3D;相互共享软硬件资&#x3D;&#x3D;源的集合体</p>
+<p>向用户提供的most important功能：<strong>连通</strong> <strong>共享</strong></p>
+<h4 id="具体构成"><a href="#具体构成" class="headerlink" title="具体构成"></a>具体构成</h4><p><img src="D:\TyporaImages\image-20250611121615215.png" alt="image-20250611121615215"></p>
+<h4 id="服务描述"><a href="#服务描述" class="headerlink" title="服务描述"></a>服务描述</h4><p><img src="D:\TyporaImages\image-20250611121915955.png" alt="image-20250611121915955"></p>
+<h4 id="protocol"><a href="#protocol" class="headerlink" title="protocol"></a>protocol</h4><p><img src="D:\TyporaImages\image-20250611122030850.png" alt="image-20250611122030850"></p>
+<p><img src="D:\TyporaImages\image-20250611122406831.png" alt="image-20250611122406831"></p>
+<h4 id="Internet-标准"><a href="#Internet-标准" class="headerlink" title="Internet 标准"></a>Internet 标准</h4><p>IETF</p>
+<p>RFC</p>
+<h3 id="网络边缘"><a href="#网络边缘" class="headerlink" title="网络边缘"></a>网络边缘</h3><ul>
+<li>主机：客户机和服务器</li>
+<li>服务器一般位于数据中心内</li>
+</ul>
+<h4 id="接入网络，物理介质"><a href="#接入网络，物理介质" class="headerlink" title="接入网络，物理介质"></a>接入网络，物理介质</h4><ul>
+<li>有线通信链路</li>
+<li>无线通信链路</li>
+</ul>
+<h3 id="网络核心"><a href="#网络核心" class="headerlink" title="网络核心"></a>网络核心</h3><ul>
+<li><p>互联的路由器</p>
+</li>
+<li><p>网络组成的网络</p>
+<p><img src="D:\TyporaImages\image-20250611124451349.png" alt="image-20250611124451349"></p>
+</li>
+</ul>
+<h4 id="电路交换"><a href="#电路交换" class="headerlink" title="&#x3D;&#x3D;电路交换&#x3D;&#x3D;"></a>&#x3D;&#x3D;电路交换&#x3D;&#x3D;</h4><p>&#x3D;&#x3D;时分复用TDMA&#x3D;&#x3D;</p>
+<p><img src="D:\TyporaImages\image-20250611125510621.png" alt="image-20250611125510621"></p>
+<p>&#x3D;&#x3D;频分复用FDMA&#x3D;&#x3D;</p>
+<h4 id="分组交换"><a href="#分组交换" class="headerlink" title="&#x3D;&#x3D;分组交换&#x3D;&#x3D;"></a>&#x3D;&#x3D;分组交换&#x3D;&#x3D;</h4><p><img src="D:\TyporaImages\image-20250611135808347.png" alt="image-20250611135808347"></p>
+<p><img src="D:\TyporaImages\image-20250611140053111.png" alt="image-20250611140053111"></p>
+<p><img src="D:\TyporaImages\image-20250611140122024.png" alt="image-20250611140122024"></p>
+<p><img src="D:\TyporaImages\image-20250611140136877.png" alt="image-20250611140136877"></p>
+<p><img src="D:\TyporaImages\image-20250611140151799.png" alt="image-20250611140151799"></p>
+<p><img src="D:\TyporaImages\image-20250611140923773.png" alt="image-20250611140923773"></p>
+<p><img src="D:\TyporaImages\image-20250611140939892.png" alt="image-20250611140939892"></p>
+<p><img src="D:\TyporaImages\image-20250611142551416.png" alt="image-20250611142551416"></p>
+<h5 id="分组传输时延（Transmission-Delay）："><a href="#分组传输时延（Transmission-Delay）：" class="headerlink" title="分组传输时延（Transmission Delay）："></a>分组传输时延（Transmission Delay）：<img src="D:\TyporaImages\image-20250611142408303.png" alt="image-20250611142408303"></h5><p><strong>L</strong> 是要发送的分组长度（bit）</p>
+<p><strong>R</strong> 是链路的传输速率（bit&#x2F;s） 带宽</p>
+<p>单位最终是“秒（s）”</p>
+<p><img src="D:\TyporaImages\image-20250611142844353.png" alt="image-20250611142844353"></p>
+<h5 id="统计复用"><a href="#统计复用" class="headerlink" title="统计复用"></a>统计复用</h5><p><img src="D:\TyporaImages\image-20250611143732220.png" alt="image-20250611143732220"></p>
+<h5 id="处理拥塞"><a href="#处理拥塞" class="headerlink" title="处理拥塞"></a>处理拥塞</h5><p><img src="D:\TyporaImages\image-20250611144533957.png" alt="image-20250611144533957"></p>
+<h5 id="分组交换网络中的-延迟-、丢失和吞吐量"><a href="#分组交换网络中的-延迟-、丢失和吞吐量" class="headerlink" title="分组交换网络中的&#x3D;&#x3D;延迟&#x3D;&#x3D;、丢失和吞吐量"></a>分组交换网络中的&#x3D;&#x3D;延迟&#x3D;&#x3D;、丢失和吞吐量</h5><p><img src="D:\TyporaImages\image-20250611201757553.png" alt="image-20250611201757553"></p>
+<h6 id="流量强度"><a href="#流量强度" class="headerlink" title="流量强度"></a>流量强度</h6><p><img src="D:\TyporaImages\image-20250611202020189.png" alt="image-20250611202020189"></p>
+<p>越大，排队延迟越大</p>
+<h6 id="网络吞吐量bps"><a href="#网络吞吐量bps" class="headerlink" title="网络吞吐量bps"></a>网络吞吐量bps</h6><p>data packets per second</p>
+<h4 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h4><p><img src="D:\TyporaImages\image-20250611140246659.png" alt="image-20250611140246659"></p>
+<h5 id=""><a href="#" class="headerlink" title=""></a><img src="D:\TyporaImages\image-20250611183836371.png" alt="image-20250611183836371"></h5><h3 id="带宽表示网络中-单位时间-内能够传输的数据量"><a href="#带宽表示网络中-单位时间-内能够传输的数据量" class="headerlink" title="带宽表示网络中&#x3D;&#x3D;单位时间&#x3D;&#x3D;内能够传输的数据量"></a>带宽表示网络中&#x3D;&#x3D;单位时间&#x3D;&#x3D;内能够传输的数据量</h3><p><img src="D:\TyporaImages\image-20250611124105011.png" alt="image-20250611124105011"></p>
+<h3 id="TCP-UDP"><a href="#TCP-UDP" class="headerlink" title="TCP&amp;UDP"></a>TCP&amp;UDP</h3><p><img src="D:\TyporaImages\image-20250611124403550.png" alt="image-20250611124403550"></p>
+<p><img src="D:\TyporaImages\image-20250611124624859.png" alt="image-20250611124624859"></p>
+<p><img src="D:\TyporaImages\image-20250611124642232.png" alt="image-20250611124642232"></p>
+<h3 id="协议层-服务模型"><a href="#协议层-服务模型" class="headerlink" title="协议层   服务模型"></a>协议层   服务模型</h3><p><img src="D:\TyporaImages\image-20250611212635428.png" alt="image-20250611212635428"></p>
+<h4 id="逻辑通信"><a href="#逻辑通信" class="headerlink" title="逻辑通信"></a>逻辑通信</h4><p><strong>分布式</strong></p>
+<p><img src="D:\TyporaImages\image-20250612011103337.png" alt="image-20250612011103337"></p>
+<h4 id="Internet-协议栈"><a href="#Internet-协议栈" class="headerlink" title="Internet 协议栈"></a>Internet 协议栈</h4><p><img src="D:\TyporaImages\image-20250612011514893.png" alt="image-20250612011514893"></p>
+<p><img src="D:\TyporaImages\image-20250612132239660.png" alt="image-20250612132239660"></p>
+<h4 id="实体、协议、服务和服务访问点"><a href="#实体、协议、服务和服务访问点" class="headerlink" title="实体、协议、服务和服务访问点"></a>实体、协议、服务和服务访问点</h4><p><img src="D:\TyporaImages\image-20250612012022082.png" alt="image-20250612012022082"></p>
+<p><img src="D:\TyporaImages\image-20250612012318397.png" alt="image-20250612012318397"></p>
+<h3 id="1-7-攻击威胁下的网络"><a href="#1-7-攻击威胁下的网络" class="headerlink" title="1.7 攻击威胁下的网络"></a>1.7 攻击威胁下的网络</h3><p><img src="D:\TyporaImages\image-20250612132930740.png" alt="image-20250612132930740"></p>
+<h4 id="1、植入恶意软件"><a href="#1、植入恶意软件" class="headerlink" title="1、植入恶意软件"></a>1、植入恶意软件</h4><h5 id="病毒-蠕虫"><a href="#病毒-蠕虫" class="headerlink" title="病毒&amp;蠕虫"></a>病毒&amp;蠕虫</h5><p><img src="D:\TyporaImages\image-20250612133747109.png" alt="image-20250612133747109"></p>
+<h5 id="2-攻击服务器和网络基础设施"><a href="#2-攻击服务器和网络基础设施" class="headerlink" title="2. 攻击服务器和网络基础设施"></a>2. 攻击服务器和网络基础设施</h5><p><img src="D:\TyporaImages\image-20250612134150157.png" alt="image-20250612134150157"></p>
+<h5 id="3-嗅探分组"><a href="#3-嗅探分组" class="headerlink" title="3. 嗅探分组"></a>3. 嗅探分组</h5><p><img src="D:\TyporaImages\image-20250612134230201.png" alt="image-20250612134230201"></p>
+<h5 id="4-伪装"><a href="#4-伪装" class="headerlink" title="4 . 伪装"></a>4 . 伪装</h5><p><img src="D:\TyporaImages\image-20250612134304348.png" alt="image-20250612134304348"></p>
+<h5 id="5-修改或删除报文"><a href="#5-修改或删除报文" class="headerlink" title="5.修改或删除报文"></a>5.修改或删除报文</h5><p><img src="D:\TyporaImages\image-20250612134341994.png" alt="image-20250612134341994"></p>
+<h2 id="二、应用层"><a href="#二、应用层" class="headerlink" title="二、应用层"></a>二、应用层</h2><h4 id="网络应用程序体系结构"><a href="#网络应用程序体系结构" class="headerlink" title="网络应用程序体系结构"></a>网络应用程序体系结构</h4><h3 id="进程与计算机网络的接口-套接字"><a href="#进程与计算机网络的接口-套接字" class="headerlink" title="进程与计算机网络的接口-套接字"></a>进程与计算机网络的接口-套接字</h3><p><img src="D:\TyporaImages\image-20250612140456758.png" alt="image-20250612140456758"></p>
+<h3 id="因特网运输协议提供的服务：TCP-UDP"><a href="#因特网运输协议提供的服务：TCP-UDP" class="headerlink" title="因特网运输协议提供的服务：TCP&amp;UDP"></a>因特网运输协议提供的服务：TCP&amp;UDP</h3><p><img src="D:\TyporaImages\image-20250612141058943.png" alt="image-20250612141058943"></p>
+<h4 id="因特网应用：应用层协议，传输协议"><a href="#因特网应用：应用层协议，传输协议" class="headerlink" title="因特网应用：应用层协议，传输协议"></a>因特网应用：应用层协议，传输协议</h4><p><img src="D:\TyporaImages\image-20250612141846743.png" alt="image-20250612141846743"></p>
+<h3 id="Web应用和HTTP协议"><a href="#Web应用和HTTP协议" class="headerlink" title="Web应用和HTTP协议"></a>Web应用和HTTP协议</h3><p><img src="D:\TyporaImages\image-20250612142058186.png" alt="image-20250612142058186"></p>
+<h4 id="HTTP-超文本传输协议"><a href="#HTTP-超文本传输协议" class="headerlink" title="HTTP: 超文本传输协议"></a>HTTP: 超文本传输协议</h4><p><img src="D:\TyporaImages\image-20250612142354899.png" alt="image-20250612142354899"></p>
+<h4 id="HTTP连接"><a href="#HTTP连接" class="headerlink" title="HTTP连接"></a>HTTP连接</h4><p><img src="D:\TyporaImages\image-20250612142607091.png" alt="image-20250612142607091"></p>
+<p><img src="D:\TyporaImages\image-20250613153117234.png" alt="image-20250613153117234"></p>
+<h5 id="非持久HTTP连接"><a href="#非持久HTTP连接" class="headerlink" title="&#x3D;&#x3D;非持久HTTP连接&#x3D;&#x3D;"></a>&#x3D;&#x3D;非持久HTTP连接&#x3D;&#x3D;</h5><p><img src="D:\TyporaImages\image-20250612143659617.png" alt="image-20250612143659617"></p>
+<h6 id="往返时间RTT"><a href="#往返时间RTT" class="headerlink" title="往返时间RTT"></a>往返时间RTT</h6><p><img src="D:\TyporaImages\image-20250613151655503.png" alt="image-20250613151655503"></p>
+<h6 id="非持久HTTP响应时间："><a href="#非持久HTTP响应时间：" class="headerlink" title="&#x3D;&#x3D;非持久HTTP响应时间：&#x3D;&#x3D;"></a>&#x3D;&#x3D;非持久HTTP响应时间：&#x3D;&#x3D;</h6><p>total &#x3D; 2RTT + file transmit time</p>
+<h6 id="TCP连接的“三次握手”过程"><a href="#TCP连接的“三次握手”过程" class="headerlink" title="TCP连接的“三次握手”过程"></a>TCP连接的“三次握手”过程</h6><p><img src="D:\TyporaImages\image-20250613151803936.png" alt="image-20250613151803936"></p>
+<h4 id="持久HTTP连接"><a href="#持久HTTP连接" class="headerlink" title="持久HTTP连接"></a>持久HTTP连接</h4><p><img src="D:\TyporaImages\image-20250613152241361.png" alt="image-20250613152241361"></p>
+<h5 id="非流水线vs流水线"><a href="#非流水线vs流水线" class="headerlink" title="非流水线vs流水线"></a>非流水线vs流水线</h5><p><img src="D:\TyporaImages\image-20250613152351929.png" alt="image-20250613152351929"></p>
+<h4 id="非持久连接VS持久连接"><a href="#非持久连接VS持久连接" class="headerlink" title="非持久连接VS持久连接"></a>非持久连接VS持久连接</h4><p><img src="D:\TyporaImages\image-20250613152017833.png" alt="image-20250613152017833"></p>
+<p><img src="D:\TyporaImages\image-20250613153744307.png" alt="image-20250613153744307"></p>
+<h4 id="HTTP请求页面时间分析"><a href="#HTTP请求页面时间分析" class="headerlink" title="HTTP请求页面时间分析"></a>HTTP请求页面时间分析</h4><p><img src="D:\TyporaImages\image-20250613153539505.png" alt="image-20250613153539505"></p>
+<h4 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h4><p><img src="D:\TyporaImages\image-20250613154154390.png" alt="image-20250613154154390"></p>
+<h6 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h6><p><img src="D:\TyporaImages\image-20250613154855273.png" alt="image-20250613154855273"></p>
+<p><img src="D:\TyporaImages\image-20250613154306476.png" alt="image-20250613154306476"></p>
+<p><img src="D:\TyporaImages\image-20250613155002231.png" alt="image-20250613155002231"></p>
+<h6 id="响应状态码"><a href="#响应状态码" class="headerlink" title="响应状态码"></a>响应状态码</h6><p><img src="D:\TyporaImages\image-20250613155110067.png" alt="image-20250613155110067"></p>
+<h4 id="HTTP-2"><a href="#HTTP-2" class="headerlink" title="HTTP&#x2F;2"></a>HTTP&#x2F;2</h4><p><img src="D:\TyporaImages\image-20250613155605962.png" alt="image-20250613155605962"></p>
+<p><img src="D:\TyporaImages\image-20250613155637456.png" alt="image-20250613155637456"></p>
+<p><img src="D:\TyporaImages\image-20250613155939339.png" alt="image-20250613155939339"></p>
+<h5 id="HTTP3的改进"><a href="#HTTP3的改进" class="headerlink" title="HTTP3的改进"></a>HTTP3的改进</h5><p><img src="D:\TyporaImages\image-20250613160050111.png" alt="image-20250613160050111"></p>
+<h5 id="HTTP1、2、3"><a href="#HTTP1、2、3" class="headerlink" title="HTTP1、2、3"></a>HTTP1、2、3</h5><p><img src="D:\TyporaImages\image-20250613160229720.png" alt="image-20250613160229720"></p>
+<p><img src="D:\TyporaImages\image-20250613160216800.png" alt="image-20250613160216800"><img src="D:\TyporaImages\image-20250613160307890.png" alt="image-20250613160307890"></p>
+<p><img src="D:\TyporaImages\image-20250613160335320.png" alt="image-20250613160335320"></p>
+<h4 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h4><p>原因？</p>
+<p>HTTP GET&#x2F;响应交互是无状态的，不保存客户信息。</p>
+<p>Cookie：允许Web站点&#x3D;&#x3D;跟踪、识别用户&#x3D;&#x3D;；服务器可以限制用户访问，或把内容与用户身份关联。</p>
+<h5 id="包括四部分"><a href="#包括四部分" class="headerlink" title="包括四部分"></a>包括四部分</h5><p><img src="D:\TyporaImages\image-20250613160549616.png" alt="image-20250613160549616"></p>
+<p>不利于隐私保护</p>
+<h4 id="Web缓存"><a href="#Web缓存" class="headerlink" title="Web缓存"></a>Web缓存</h4><p>也叫代理服务器，是能够代表起始服务器来满足 HTTP请求的网络实体。</p>
+<p><img src="D:\TyporaImages\image-20250613220539491.png" alt="image-20250613220539491"></p>
+<h5 id="条件GET方法"><a href="#条件GET方法" class="headerlink" title="条件GET方法"></a>条件GET方法</h5><p><img src="D:\TyporaImages\image-20250613221305822.png" alt="image-20250613221305822"></p>
+<p>证实其保存的对象是否为最新</p>
+<h6 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h6><p><img src="D:\TyporaImages\image-20250613221427794.png" alt="image-20250613221427794"></p>
+<h5 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h5><p>Q：描述使用 Web 缓存服务器后网页的访问过程以及使用条件 GET 请求更新对象的过程。</p>
+<p>A：客户的所有网页请求都送达 WEB 缓存服务器</p>
+<p>WEB 缓存服务器先查询本地<strong>是否具有请求对象</strong>，如果有且没有超时(或过期)则直接返回给客户，</p>
+<p>如果 WEB 缓存服务器本地<strong>没有所请求的对象</strong>，则转发请求到起始网页服务器，并接收网页响应，然后缓存在本地并转发给客户</p>
+<p>如果本地存在请求的网页但超时(或过期)，则 WEB 缓存服务器使用条件 GET进行本地缓存更新；</p>
+<p>web 服务器收到条件 GET请求后判断自己是否对网页进行了修改，如果没有修改，则只返回未修改的响应报头，否则返回整个网页文件。</p>
+<p><img src="D:\TyporaImages\image-20250613222000763.png" alt="image-20250613222000763"></p>
+<h3 id="因特网中的电子邮件"><a href="#因特网中的电子邮件" class="headerlink" title="因特网中的电子邮件"></a>因特网中的电子邮件</h3><h4 id="电子邮件"><a href="#电子邮件" class="headerlink" title="电子邮件"></a>电子邮件</h4><p><img src="D:\TyporaImages\image-20250613222357738.png" alt="image-20250613222357738"></p>
+<p><img src="D:\TyporaImages\image-20250613222450826.png" alt="image-20250613222450826"></p>
+<h4 id="发送报文过程"><a href="#发送报文过程" class="headerlink" title="发送报文过程"></a>发送报文过程</h4><p><img src="D:\TyporaImages\image-20250613222922325.png" alt="image-20250613222922325"></p>
+<p>写-&gt;发-&gt;建-&gt;连-&gt;收-&gt;读</p>
+<p><img src="D:\TyporaImages\image-20250613223109258.png" alt="image-20250613223109258"></p>
+<h4 id="SMTP"><a href="#SMTP" class="headerlink" title="SMTP"></a>SMTP</h4><p><img src="D:\TyporaImages\image-20250613223245053.png" alt="image-20250613223245053"></p>
+<h4 id="邮件访问协议"><a href="#邮件访问协议" class="headerlink" title="邮件访问协议"></a>邮件访问协议</h4><p><img src="D:\TyporaImages\image-20250613223816601.png" alt="image-20250613223816601"></p>
+<h5 id="SMTP-vs-HTTP"><a href="#SMTP-vs-HTTP" class="headerlink" title="SMTP vs HTTP"></a>SMTP vs HTTP</h5><p><img src="D:\TyporaImages\image-20250613225101236.png" alt="image-20250613225101236"></p>
+<h4 id="POP3"><a href="#POP3" class="headerlink" title="POP3"></a>POP3</h4><p><strong>POP3（邮局协议 第3版）</strong> 是一种<strong>电子邮件接收协议</strong></p>
+<p><img src="D:\TyporaImages\image-20250613224241888.png" alt="image-20250613224241888"></p>
+<p><img src="D:\TyporaImages\image-20250613224341403.png" alt="image-20250613224341403"></p>
+<p><img src="D:\TyporaImages\image-20250613224605482.png" alt="image-20250613224605482"></p>
+<h5 id="辨析"><a href="#辨析" class="headerlink" title="辨析"></a>辨析</h5><p><img src="D:\TyporaImages\image-20250613224821886.png" alt="image-20250613224821886"></p>
+<h3 id="DNS-英特网的目录服务"><a href="#DNS-英特网的目录服务" class="headerlink" title="DNS:英特网的目录服务"></a>DNS:英特网的目录服务</h3><h4 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h4><p><img src="D:\TyporaImages\image-20250613225335083.png" alt="image-20250613225335083"></p>
+<h4 id="分层架构"><a href="#分层架构" class="headerlink" title="分层架构"></a>分层架构</h4><p><img src="D:\TyporaImages\image-20250613225709428.png" alt="image-20250613225709428"></p>
+<p><img src="D:\TyporaImages\image-20250613225154547.png" alt="image-20250613225154547"></p>
+<p><img src="D:\TyporaImages\image-20250613225413306.png" alt="image-20250613225413306"></p>
+<p>当一个主机发出DNS查询报文时，这个报文就首先被送往该主机的本地域名服务器。</p>
+<p>起着代理的作用，转发请求到层次结构中。在用户的计算机中设置网卡的“Internet协议（TCP&#x2F;IP）属性”对话框中设置的首选DNS服务器即为本地域名服务器。 本地域名服务器离用户较近，一般不超过几个路由器的距离。</p>
+<h4 id="查询方式"><a href="#查询方式" class="headerlink" title="查询方式"></a>查询方式</h4><p><img src="D:\TyporaImages\image-20250613225834534.png" alt="image-20250613225834534"></p>
+<h5 id="查询方式辨析"><a href="#查询方式辨析" class="headerlink" title="查询方式辨析"></a>查询方式辨析</h5><p><img src="D:\TyporaImages\image-20250614150129700.png" alt="image-20250614150129700"></p>
+<p><img src="D:\TyporaImages\image-20250614150149129.png" alt="image-20250614150149129"></p>
+<h4 id="域名解析过程"><a href="#域名解析过程" class="headerlink" title="域名解析过程"></a>域名解析过程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">    participant 客户机</span><br><span class="line">    participant 本地域名服务器</span><br><span class="line">    participant 根域名服务器</span><br><span class="line">    participant 顶级域名服务器</span><br><span class="line">    participant 权限域名服务器</span><br><span class="line"></span><br><span class="line">    客户机-&gt;&gt;本地域名服务器: ① 发送 DNS 请求报文（查询 y.abc.com）</span><br><span class="line">    本地域名服务器-&gt;&gt;本地域名服务器: ② 查询本地缓存（未命中）</span><br><span class="line">    本地域名服务器-&gt;&gt;根域名服务器: ③ 发送 DNS 请求报文（迭代查询）</span><br><span class="line">    根域名服务器--&gt;&gt;本地域名服务器: ④ 返回 .com 的顶级域名服务器地址</span><br><span class="line"></span><br><span class="line">    本地域名服务器-&gt;&gt;顶级域名服务器: ⑤ 发送 DNS 请求报文</span><br><span class="line">    顶级域名服务器--&gt;&gt;本地域名服务器: ⑥ 返回 abc.com 的权威域名服务器地址</span><br><span class="line"></span><br><span class="line">    本地域名服务器-&gt;&gt;权限域名服务器: ⑦ 发送 DNS 请求报文</span><br><span class="line">    权限域名服务器--&gt;&gt;本地域名服务器: ⑧ 返回 y.abc.com 的 IP 地址</span><br><span class="line"></span><br><span class="line">    本地域名服务器--&gt;&gt;客户机: 返回最终 IP 结果</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h4><p><img src="D:\TyporaImages\image-20250614151244705.png" alt="image-20250614151244705"></p>
+<h4 id="DNS攻击"><a href="#DNS攻击" class="headerlink" title="DNS攻击"></a>DNS攻击</h4><h5 id="1、DNS劫持"><a href="#1、DNS劫持" class="headerlink" title="1、DNS劫持"></a>1、DNS劫持</h5><p><img src="D:\TyporaImages\image-20250614151652975.png" alt="image-20250614151652975"></p>
+<h5 id="2、缓存投毒"><a href="#2、缓存投毒" class="headerlink" title="2、缓存投毒"></a>2、缓存投毒</h5><p><img src="D:\TyporaImages\image-20250614151722205.png" alt="image-20250614151722205"></p>
+<h5 id="3、DDOS攻击-Distributed-Denial-of-Service"><a href="#3、DDOS攻击-Distributed-Denial-of-Service" class="headerlink" title="3、DDOS攻击 (Distributed Denial of Service)"></a>3、DDOS攻击 (Distributed Denial of Service)</h5><p><img src="D:\TyporaImages\image-20250614151836948.png" alt="image-20250614151836948"></p>
+<h5 id="4、DNS欺骗"><a href="#4、DNS欺骗" class="headerlink" title="4、DNS欺骗"></a>4、DNS欺骗</h5><p><img src="D:\TyporaImages\image-20250614152108375.png" alt="image-20250614152108375"></p>
+<h3 id="内容分发网络CDN"><a href="#内容分发网络CDN" class="headerlink" title="内容分发网络CDN"></a>内容分发网络CDN</h3><p><img src="D:\TyporaImages\image-20250614153511181.png" alt="image-20250614153511181"></p>
+<h5 id="为什么需要"><a href="#为什么需要" class="headerlink" title="为什么需要"></a>为什么需要</h5><p><img src="D:\TyporaImages\image-20250614153536123.png" alt="image-20250614153536123"></p>
+<h5 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h5><p><img src="D:\TyporaImages\image-20250614153608596.png" alt="image-20250614153608596"></p>
+<h5 id="两种部署方式"><a href="#两种部署方式" class="headerlink" title="两种部署方式"></a>两种部署方式</h5><p><img src="D:\TyporaImages\image-20250614153641908.png" alt="image-20250614153641908"></p>
+<h4 id="提升速度、降低压力、增强稳定性"><a href="#提升速度、降低压力、增强稳定性" class="headerlink" title="提升速度、降低压力、增强稳定性"></a>提升速度、降低压力、增强稳定性</h4><h2 id="三、运输层"><a href="#三、运输层" class="headerlink" title="三、运输层"></a>三、运输层</h2><p>&#x3D;&#x3D;功能&#x3D;&#x3D;:1.应用进程之间的逻辑通信</p>
+<p>2.复用和分用</p>
+<p>3.差错检测</p>
+<p>4.提供面向连接和无连接的传输协议</p>
+<h3 id="运输层服务"><a href="#运输层服务" class="headerlink" title="运输层服务"></a>运输层服务</h3><p><img src="D:\TyporaImages\image-20250614160050973.png" alt="image-20250614160050973"></p>
+<h4 id="两个基本的传输层协议"><a href="#两个基本的传输层协议" class="headerlink" title="两个基本的传输层协议"></a>两个基本的传输层协议</h4><p><img src="D:\TyporaImages\image-20250614160442590.png" alt="image-20250614160442590"></p>
+<h3 id="多路复用和多路分解"><a href="#多路复用和多路分解" class="headerlink" title="多路复用和多路分解"></a>多路复用和多路分解</h3><p><img src="D:\TyporaImages\image-20250614161354455.png" alt="image-20250614161354455"></p>
+<p><img src="D:\TyporaImages\image-20250614161402996.png" alt="image-20250614161402996"></p>
+<p><img src="D:\TyporaImages\image-20250614161910894.png" alt="image-20250614161910894"><img src="D:\TyporaImages\image-20250614161920267.png" alt="image-20250614161920267"></p>
+<h4 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h4><p><img src="D:\TyporaImages\image-20250614162942453.png" alt="image-20250614162942453"></p>
+<p><img src="D:\TyporaImages\image-20250614163033606.png" alt="image-20250614163033606"></p>
+<p><img src="D:\TyporaImages\image-20250614163047307.png" alt="image-20250614163047307"></p>
+<p>客户端用随机端口发起连接，传输层通过它完成多路分解</p>
+<h4 id="套接字"><a href="#套接字" class="headerlink" title="套接字"></a>套接字</h4><p><img src="D:\TyporaImages\image-20250614163309004.png" alt="image-20250614163309004"></p>
+<h4 id="无连接多路分解"><a href="#无连接多路分解" class="headerlink" title="无连接多路分解"></a>无连接多路分解</h4><h5 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h5><p><img src="D:\TyporaImages\image-20250614185659791.png" alt="image-20250614185659791"></p>
+<p><img src="D:\TyporaImages\image-20250614185844497.png" alt="image-20250614185844497"></p>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><p><img src="D:\TyporaImages\image-20250614190048231.png" alt="image-20250614190048231"></p>
+<p><img src="D:\TyporaImages\image-20250614190057919.png" alt="image-20250614190057919"></p>
+<h5 id="为什么说是无连接？"><a href="#为什么说是无连接？" class="headerlink" title="为什么说是无连接？"></a>为什么说是无连接？</h5><p><img src="D:\TyporaImages\image-20250614190148844.png" alt="image-20250614190148844"></p>
+<h4 id="面向连接的多路分解"><a href="#面向连接的多路分解" class="headerlink" title="面向连接的多路分解"></a>面向连接的多路分解</h4><p><img src="D:\TyporaImages\image-20250614190451049.png" alt="image-20250614190451049"></p>
+<h5 id="四元组标识"><a href="#四元组标识" class="headerlink" title="四元组标识"></a>四元组标识</h5><p><img src="D:\TyporaImages\image-20250614190533491.png" alt="image-20250614190533491"></p>
+<h5 id="多路复用"><a href="#多路复用" class="headerlink" title="多路复用"></a>多路复用</h5><p>多路复用：接收主机使用这四个值来将报文段定位到适当的套接字</p>
+<p><img src="D:\TyporaImages\image-20250614190639276.png" alt="image-20250614190639276"></p>
+<p><img src="D:\TyporaImages\image-20250614190748575.png" alt="image-20250614190748575"></p>
+<h4 id="多路复用和多路分解小结"><a href="#多路复用和多路分解小结" class="headerlink" title="多路复用和多路分解小结"></a>多路复用和多路分解小结</h4><p><img src="D:\TyporaImages\image-20250614191252717.png" alt="image-20250614191252717"></p>
+<p><img src="D:\TyporaImages\image-20250614191814784.png" alt="image-20250614191814784"></p>
+<p>C:<img src="D:\TyporaImages\image-20250614191833138.png" alt="image-20250614191833138"></p>
+<p><img src="D:\TyporaImages\image-20250614193538637.png" alt="image-20250614193538637"></p>
+<p><img src="D:\TyporaImages\image-20250614193548445.png" alt="image-20250614193548445"></p>
+<p><img src="D:\TyporaImages\image-20250614193820459.png" alt="image-20250614193820459"></p>
+<h3 id="无连接传输-UDP"><a href="#无连接传输-UDP" class="headerlink" title="无连接传输: UDP"></a>无连接传输: UDP</h3><p>UDP 只在 IP 的数据报服务之上增加了很少一点的功能，即&#x3D;&#x3D;端口&#x3D;&#x3D;的功能和&#x3D;&#x3D;差错检测&#x3D;&#x3D;的功能。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><p><img src="D:\TyporaImages\image-20250614194330840.png" alt="image-20250614194330840"></p>
+<h4 id="在-UDP-上实现可靠传输"><a href="#在-UDP-上实现可靠传输" class="headerlink" title="在 UDP 上实现可靠传输"></a>在 UDP 上实现可靠传输</h4><p><img src="D:\TyporaImages\image-20250614194650159.png" alt="image-20250614194650159"></p>
+<h4 id="UDP是面向报文的"><a href="#UDP是面向报文的" class="headerlink" title="UDP是面向报文的"></a>UDP是面向报文的</h4><p><img src="D:\TyporaImages\image-20250614194745926.png" alt="image-20250614194745926"></p>
+<p><img src="D:\TyporaImages\image-20250614194822833.png" alt="image-20250614194822833"></p>
+<h5 id="封装过程"><a href="#封装过程" class="headerlink" title="封装过程"></a>封装过程</h5><p><img src="D:\TyporaImages\image-20250614195220413.png" alt="image-20250614195220413"></p>
+<h4 id="UDP：传输层动作"><a href="#UDP：传输层动作" class="headerlink" title="UDP：传输层动作"></a>UDP：传输层动作</h4><p><img src="D:\TyporaImages\image-20250614195756299.png" alt="image-20250614195756299"></p>
+<p><img src="D:\TyporaImages\image-20250614195816513.png" alt="image-20250614195816513"></p>
+<p><img src="D:\TyporaImages\image-20250614195832080.png" alt="image-20250614195832080"></p>
+<h4 id="UDP-首部格式"><a href="#UDP-首部格式" class="headerlink" title="UDP 首部格式"></a>UDP 首部格式</h4><p><img src="D:\TyporaImages\image-20250614200716517.png" alt="image-20250614200716517"></p>
+<p><img src="D:\TyporaImages\image-20250614200912293.png" alt="image-20250614200912293"></p>
+<h4 id="UDP-校验和"><a href="#UDP-校验和" class="headerlink" title="UDP 校验和"></a>UDP 校验和</h4><p><strong>目标: 对传输的报文段进行差错检测</strong></p>
+<p><img src="D:\TyporaImages\image-20250614201316662.png" alt="image-20250614201316662"></p>
+<p>详细步骤</p>
+<p><strong>发送方:</strong></p>
+<p>【1】先把全 0 放入校验和字段<br>原因：为了计算时不让“校验和值自己影响自己”，所以先用 0 占位。</p>
+<p>【2】将 UDP 报文（首部 + 数据）看成由许多 16位的整数 串联起来</p>
+<ul>
+<li><p>所有内容都要按 每16位（二进制）&#x3D; 2字节为单位读取</p>
+</li>
+<li><p>报文不够偶数字节的，需要填充</p>
+</li>
+</ul>
+<p>【3】如果 UDP 报文数据部分不是偶数个字节</p>
+<ul>
+<li>就在最后补一个全 0 字节</li>
+<li>目的：凑成完整的 16 位整数，便于后面加法处理</li>
+<li>注意：这个补 0 字节只是为了计算，不会实际发送！</li>
+</ul>
+<p>【4】把所有字段（首部 + 数据）视为 16 位整数，做加法</p>
+<ul>
+<li><p>用 一的补码（即普通加法 + 进位回卷）方式累加所有字段</p>
+</li>
+<li><p>累加和得到一个 16 位的值</p>
+</li>
+</ul>
+<p>【5】对结果取反（按位求反）</p>
+<ul>
+<li><p>这就是校验和值（checksum）</p>
+</li>
+<li><p>把它写入 UDP 首部的校验和字段</p>
+</li>
+</ul>
+<p><strong>接受方</strong>：</p>
+<p>【1】接收方收到报文后，把报文连同校验和字段一起拿来重新做一遍加法</p>
+<ul>
+<li>加法方式和发送方一样（1的补码加法）</li>
+</ul>
+<ul>
+<li>如果原来报文没错，那么加上校验和值后，总和就应该是全 1（二进制的 0xFFFF）</li>
+</ul>
+<p>【2】若和不是全 1，说明数据在传输中发生了损坏</p>
+<ul>
+<li>接收方就应当丢弃这个 UDP 报文</li>
+</ul>
+<p>【3】如果校验和验证成功（和为全 1）</p>
+<ul>
+<li>说明该报文没有检测到错误，可以交给上层应用程序处理</li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250614201701526.png" alt="image-20250614201701526"></p>
+<p>UDP 的校验和机制 <strong>无法检测“同位互换”类的错误</strong>，它只检测“整体和变了没有”</p>
+<p><img src="D:\TyporaImages\image-20250614211601256.png" alt="image-20250614211601256"></p>
+<p><img src="D:\TyporaImages\image-20250614211847251.png" alt="image-20250614211847251"></p>
+<h6 id="伪首部"><a href="#伪首部" class="headerlink" title="伪首部"></a>伪首部</h6><p><img src="D:\TyporaImages\image-20250614211927623.png" alt="image-20250614211927623"></p>
+<p><img src="D:\TyporaImages\image-20250614212404073.png" alt="image-20250614212404073"></p>
+<p><img src="D:\TyporaImages\image-20250614213244508.png" alt="image-20250614213244508"></p>
+<p><strong>UDP为什么要用该和的反码，即为什么不直接使用该和？</strong></p>
+<p><img src="D:\TyporaImages\image-20250614213322324.png" alt="image-20250614213322324"></p>
+<h6 id="不一定检测出"><a href="#不一定检测出" class="headerlink" title="不一定检测出"></a>不一定检测出</h6><p><img src="D:\TyporaImages\image-20250614213403206.png" alt="image-20250614213403206"></p>
+<p><img src="D:\TyporaImages\image-20250614213939207.png" alt="image-20250614213939207"></p>
+<p><code>数据部分长度 = 总长度 − 首部长度 = 28 − ==8==  = **20 字节**</code></p>
+<p><code>看目的端口</code></p>
+<h4 id="UDP优点"><a href="#UDP优点" class="headerlink" title="UDP优点"></a>UDP优点</h4><ul>
+<li><p>协议结构简单，开销小</p>
+<p><img src="D:\TyporaImages\image-20250614214330351.png" alt="image-20250614214330351"></p>
+</li>
+<li><p>无需建立连接，低延迟</p>
+</li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250614214342205.png" alt="image-20250614214342205"></p>
+<ul>
+<li><p>网络服务受到威胁时仍可工作</p>
+<p>UDP 由于<strong>无连接、无状态、不重传、无窗口控制</strong>，即使网络受到攻击、拥塞或失效，也<strong>不易被拖死、能持续提供部分功能</strong>，这就是它“在受威胁下仍可工作”的根本原因。</p>
+</li>
+<li><p>有一定的可靠性（校验和）</p>
+</li>
+</ul>
+<h3 id="可靠数据传输原理"><a href="#可靠数据传输原理" class="headerlink" title="可靠数据传输原理"></a>可靠数据传输原理</h3><p>从应用角度看，可靠传输是“抽象通道”；<br> 但实际上底层信道是不可靠的，<br> 所以我们必须通过<strong>发送方和接收方共同运行的协议（rdt）+ 状态机建模</strong>，<br> 来实现丢包重传、差错控制、顺序交付等机制，确保数据可靠到达。</p>
+<h4 id="实现机制"><a href="#实现机制" class="headerlink" title="实现机制"></a>实现机制</h4><h5 id="停止-等待协议SW"><a href="#停止-等待协议SW" class="headerlink" title="停止-等待协议SW"></a>停止-等待协议SW</h5><p><img src="D:\TyporaImages\image-20250615193602870.png" alt="image-20250615193602870"></p>
+<h6 id="信道利用率"><a href="#信道利用率" class="headerlink" title="信道利用率"></a>信道利用率</h6><p><img src="D:\TyporaImages\image-20250615194429624.png" alt="image-20250615194429624"></p>
+<p><img src="D:\TyporaImages\image-20250615204921043.png" alt="image-20250615204921043"></p>
+<h5 id="回退N帧协议GBN"><a href="#回退N帧协议GBN" class="headerlink" title="回退N帧协议GBN"></a>回退N帧协议GBN</h5><p><img src="D:\TyporaImages\image-20250615213342867.png" alt="image-20250615213342867"></p>
+<p><img src="D:\TyporaImages\image-20250615213810240.png" alt="image-20250615213810240"></p>
+<p><img src="D:\TyporaImages\image-20250616020945854.png" alt="image-20250616020945854"></p>
+<h5 id="选择重传协议SR"><a href="#选择重传协议SR" class="headerlink" title="选择重传协议SR"></a>选择重传协议SR</h5><p><img src="D:\TyporaImages\image-20250616021220987.png" alt="image-20250616021220987"></p>
+<p><img src="D:\TyporaImages\image-20250616022124796.png" alt="image-20250616022124796"></p>
+<p> <img src="D:\TyporaImages\image-20250616022405222.png" alt="image-20250616022405222"></p>
+<p><img src="D:\TyporaImages\image-20250616022551778.png" alt="image-20250616022551778"></p>
+<p><img src="D:\TyporaImages\image-20250616022641396.png" alt="image-20250616022641396"></p>
+<h5 id="流水线协议：总结"><a href="#流水线协议：总结" class="headerlink" title="流水线协议：总结"></a>流水线协议：总结</h5><p><img src="D:\TyporaImages\image-20250616022720954.png" alt="image-20250616022720954"></p>
+<h3 id="面向连接的传输TCP"><a href="#面向连接的传输TCP" class="headerlink" title="面向连接的传输TCP"></a>面向连接的传输TCP</h3><h4 id="TCP报文段"><a href="#TCP报文段" class="headerlink" title="TCP报文段"></a>TCP报文段</h4><p><img src="D:\TyporaImages\image-20250615152845935.png" alt="image-20250615152845935"></p>
+<p><img src="D:\TyporaImages\image-20250615153757672.png" alt="image-20250615153757672"></p>
+<p>源端口目的端口各占2B   端口是运输层与应用层的服务接口。运输层的复用和分用功能通过端口实现。 </p>
+<p><img src="D:\TyporaImages\image-20250615153422783.png" alt="image-20250615153422783"></p>
+<p>首部长度：占 4 位，指出 TCP 报文段的首部长度。单位是 32 位字（以 4 字节为计算单位）。由于TCP报文段包含选项，其首部长度可变。</p>
+<p><img src="D:\TyporaImages\image-20250616085611506.png" alt="image-20250616085611506"> </p>
+<p><img src="D:\TyporaImages\image-20250616085717380.png" alt="image-20250616085717380"></p>
+<p>保留：占 6 位，保留为今后使用，但目前应置为 0。 </p>
+<p>CWR(Congestion Window Reduced)：CWR标志与后面的ECE标志用于IP首部的ECN字段。ECE标志为1时，则通知对方将拥塞窗口变小。</p>
+<p>ECE(ECN-Echo)：ECE标志表示ECN-Echo。置为1会通知通信对方，从对方到这边的网络有拥塞。在收到数据包的IP首部中ECN为1时将TCP首部中的ECE设置为1 。</p>
+<p>紧急 URG：控制位。当 URG &#x3D; 1 时，表明紧急指针字段有效，告诉系统此报文段中有紧急数据，应尽快传送 (相当于高优先级的数据)。 </p>
+<p><strong>确认 ACK</strong>：控制位。只有当 ACK &#x3D;1 时，确认号字段才有效。当 ACK &#x3D;0 时，确认号无效。 </p>
+<p>推送 PSH (PuSH) ：控制位。接收 TCP 收到 PSH &#x3D; 1 的报文段后，就尽快（即“推送”向前）交付接收应用进程，而不再等到整个缓存都填满后再交付。 </p>
+<p>复位 RST (ReSeT) ：控制位。当 RST&#x3D;1 时，表明 TCP 连接中出现严重差错（如主机崩溃或其他原因），必须释放连接，然后再重新建立运输连接。 </p>
+<p><img src="D:\TyporaImages\image-20250616085955256.png" alt="image-20250616085955256"></p>
+<p>同步 <strong>SYN</strong> (SYNchronization) ：控制位。同步 SYN &#x3D; 1 表示这是一个连接请求或连接接受报文。 当 SYN &#x3D; 1，ACK &#x3D; 0 时，表明这是一个&#x3D;&#x3D;连接请求&#x3D;&#x3D;报文段。当 SYN &#x3D; 1，ACK &#x3D; 1 时，表明这是一个&#x3D;&#x3D;连接接受&#x3D;&#x3D;报文段。</p>
+<p>终止 FIN (FINish) ：控制位。用来释放一个连接。FIN&#x3D;1 表明此报文段的发送端的数据已发送完毕，并要求释放运输连接。 </p>
+<p>窗口：占 2 字节。窗口值告诉对方：从本报文段首部中的确认号算起，接收方目前允许对方发送的数据量（以字节为单位）。</p>
+<img src="D:\TyporaImages\image-20250615155808126.png" alt="image-20250615155808126" style="zoom:80%;" />
+
+<p><img src="D:\TyporaImages\image-20250615155837220.png" alt="image-20250615155837220"></p>
+<p>检验和：占 2 字节。检验和字段检验的范围包括首部和数据这两部分。在计算检验和时，要在 TCP 报文段的前面加上 12 字节的伪首部。</p>
+<p><img src="D:\TyporaImages\image-20250615155934948.png" alt="image-20250615155934948"></p>
+<p><img src="D:\TyporaImages\image-20250615155955273.png" alt="image-20250615155955273"></p>
+<p>紧急指针：占 2 字节。在 URG &#x3D; 1时，指出本报文段中的紧急数据的字节数（紧急数据结束后就是普通数据），指出了紧急数据的末尾在报文段中的位置。 </p>
+<p><img src="D:\TyporaImages\image-20250616090050984.png" alt="image-20250616090050984"></p>
+<p>填充：使整个 TCP 首部长度是 4 字节的整数倍。</p>
+<p><img src="D:\TyporaImages\image-20250615160221404.png" alt="image-20250615160221404"></p>
+<p><img src="D:\TyporaImages\image-20250615160257726.png" alt="image-20250615160257726"></p>
+<p><img src="D:\TyporaImages\image-20250615160441689.png" alt="image-20250615160441689"></p>
+<p><img src="D:\TyporaImages\image-20250615160516034.png" alt="image-20250615160516034"></p>
+<p><img src="D:\TyporaImages\image-20250616090153540.png" alt="image-20250616090153540"></p>
+<p><img src="D:\TyporaImages\image-20250616090417535.png" alt="image-20250616090417535"></p>
+<p><img src="D:\TyporaImages\image-20250616090436173.png" alt="image-20250616090436173"></p>
+<h6 id="处理失序报文段？"><a href="#处理失序报文段？" class="headerlink" title="处理失序报文段？"></a>处理失序报文段？</h6><p>Q: 接收方如何处理失序报文段？</p>
+<p>A: TCP规范没有说明， 由实现者自行选择实现：抛弃&#x2F;缓存</p>
+<p><img src="D:\TyporaImages\image-20250616091107330.png" alt="image-20250616091107330"></p>
+<p>因为 TCP 首部长度是可变的，而 UDP 首部长度是固定的。</p>
+<p>最大为：<strong>65535（IP最大） − TCP首部长度</strong></p>
+<p>可以<img src="D:\TyporaImages\image-20250616091210838.png" alt="image-20250616091210838"></p>
+<h6 id="设置TCP超时值"><a href="#设置TCP超时值" class="headerlink" title="设置TCP超时值"></a>设置TCP超时值</h6><p><img src="D:\TyporaImages\image-20250616091319916.png" alt="image-20250616091319916"></p>
+<p><img src="D:\TyporaImages\image-20250616091606437.png" alt="image-20250616091606437"></p>
+<h3 id="TCP可靠数据传输机制"><a href="#TCP可靠数据传输机制" class="headerlink" title="TCP可靠数据传输机制"></a>TCP可靠数据传输机制</h3><p><img src="D:\TyporaImages\image-20250616093124220.png" alt="image-20250616093124220"></p>
+<p><img src="D:\TyporaImages\image-20250616154038201.png" alt="image-20250616154038201"></p>
+<p><img src="D:\TyporaImages\image-20250616154524865.png" alt="image-20250616154524865"></p>
+<p><img src="D:\TyporaImages\image-20250616155103980.png" alt="image-20250616155103980"></p>
+<h4 id="快速重传"><a href="#快速重传" class="headerlink" title="快速重传"></a>快速重传</h4><p><img src="D:\TyporaImages\image-20250616155304058.png" alt="image-20250616155304058"></p>
+<p><img src="D:\TyporaImages\image-20250616160254010.png" alt="image-20250616160254010"></p>
+<h3 id="TCP流量控制"><a href="#TCP流量控制" class="headerlink" title="TCP流量控制"></a>TCP流量控制</h3><h4 id="持续计时器"><a href="#持续计时器" class="headerlink" title="持续计时器"></a>持续计时器</h4><p><img src="D:\TyporaImages\image-20250616180202190.png" alt="image-20250616180202190"></p>
+<p>收到零窗口启动持续计时器，超时发送零窗口探测报文</p>
+<p><img src="D:\TyporaImages\image-20250616180425085.png" alt="image-20250616180425085"></p>
+<p><img src="D:\TyporaImages\image-20250616180654451.png" alt="image-20250616180654451"></p>
+<h3 id="TCP连接管理"><a href="#TCP连接管理" class="headerlink" title="TCP连接管理"></a>TCP连接管理</h3><p><img src="D:\TyporaImages\image-20250616180819829.png" alt="image-20250616180819829"></p>
+<h4 id="两次握手建立连接"><a href="#两次握手建立连接" class="headerlink" title="两次握手建立连接"></a>两次握手建立连接</h4><p><img src="D:\TyporaImages\image-20250616181512309.png" alt="image-20250616181512309"></p>
+<h4 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h4><p><img src="D:\TyporaImages\image-20250616182011480.png" alt="image-20250616182011480"></p>
+<p><img src="D:\TyporaImages\image-20250616182021434.png" alt="image-20250616182021434"></p>
+<h4 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h4><p><img src="D:\TyporaImages\image-20250617013642976.png" alt="image-20250617013642976"></p>
+<p><img src="D:\TyporaImages\image-20250617013701674.png" alt="image-20250617013701674"></p>
+<h3 id="拥塞控制原理"><a href="#拥塞控制原理" class="headerlink" title="拥塞控制原理"></a>拥塞控制原理</h3><p><img src="D:\TyporaImages\image-20250617013917434.png" alt="image-20250617013917434"></p>
+<p><img src="D:\TyporaImages\image-20250617014201855.png" alt="image-20250617014201855"></p>
+<ul>
+<li>延迟主要来自 <strong>排队时延（queueing delay）</strong></li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250617014552730.png" alt="image-20250617014552730"></p>
+<h4 id="原因和代价"><a href="#原因和代价" class="headerlink" title="原因和代价"></a>原因和代价</h4><p><img src="D:\TyporaImages\image-20250617020830164.png" alt="image-20250617020830164"></p>
+<h4 id="拥塞控制方法"><a href="#拥塞控制方法" class="headerlink" title="拥塞控制方法"></a>拥塞控制方法</h4><h5 id="端到端的拥塞控制"><a href="#端到端的拥塞控制" class="headerlink" title="端到端的拥塞控制"></a>端到端的拥塞控制</h5><p><img src="D:\TyporaImages\image-20250617020925691.png" alt="image-20250617020925691"></p>
+<h5 id="网络辅助拥塞控制"><a href="#网络辅助拥塞控制" class="headerlink" title="网络辅助拥塞控制"></a>网络辅助拥塞控制</h5><p><img src="D:\TyporaImages\image-20250617021046308.png" alt="image-20250617021046308"></p>
+<h3 id="TCP拥塞控制"><a href="#TCP拥塞控制" class="headerlink" title="TCP拥塞控制"></a>TCP拥塞控制</h3><h4 id="AIMD-探测带宽"><a href="#AIMD-探测带宽" class="headerlink" title="AIMD 探测带宽"></a>AIMD 探测带宽</h4><p><img src="D:\TyporaImages\image-20250617022157892.png" alt="image-20250617022157892"></p>
+<p><img src="D:\TyporaImages\image-20250617022206404.png" alt="image-20250617022206404"></p>
+<p><img src="D:\TyporaImages\image-20250617022237921.png" alt="image-20250617022237921"></p>
+<h4 id="发送逻辑"><a href="#发送逻辑" class="headerlink" title="发送逻辑"></a>发送逻辑</h4><p><img src="D:\TyporaImages\image-20250617022444888.png" alt="image-20250617022444888"></p>
+<p><img src="D:\TyporaImages\image-20250617022512189.png" alt="image-20250617022512189"></p>
+<p><img src="D:\TyporaImages\image-20250617022533396.png" alt="image-20250617022533396"></p>
+<p><img src="D:\TyporaImages\image-20250617022622124.png" alt="image-20250617022622124"></p>
+<h4 id="拥塞控制算法"><a href="#拥塞控制算法" class="headerlink" title="拥塞控制算法"></a>拥塞控制算法</h4><p><img src="D:\TyporaImages\image-20250617022856087.png" alt="image-20250617022856087"></p>
+<p><img src="D:\TyporaImages\image-20250617023615841.png" alt="image-20250617023615841"></p>
+<p><img src="D:\TyporaImages\image-20250617023813081.png" alt="image-20250617023813081"></p>
+<h4 id="TCP从慢启动、拥塞避免切换到快速恢复"><a href="#TCP从慢启动、拥塞避免切换到快速恢复" class="headerlink" title="TCP从慢启动、拥塞避免切换到快速恢复"></a>TCP从慢启动、拥塞避免切换到快速恢复</h4><p><img src="D:\TyporaImages\image-20250617024215180.png" alt="image-20250617024215180"></p>
+<p><img src="D:\TyporaImages\image-20250617024814207.png" alt="image-20250617024814207"></p>
+<p><img src="D:\TyporaImages\image-20250617025726510.png" alt="image-20250617025726510"></p>
+<p><img src="D:\TyporaImages\image-20250617030711080.png" alt="image-20250617030711080"></p>
+<h4 id="瓶颈链路"><a href="#瓶颈链路" class="headerlink" title="瓶颈链路"></a>瓶颈链路</h4><p><img src="D:\TyporaImages\image-20250617031040971.png" alt="image-20250617031040971"></p>
+<p><img src="D:\TyporaImages\image-20250617031055012.png" alt="image-20250617031055012"></p>
+<h4 id="基于延迟的-TCP-拥塞控制"><a href="#基于延迟的-TCP-拥塞控制" class="headerlink" title="基于延迟的 TCP 拥塞控制"></a>基于延迟的 TCP 拥塞控制</h4><p><img src="D:\TyporaImages\image-20250617031120326.png" alt="image-20250617031120326"></p>
+<h4 id="显式拥塞通知"><a href="#显式拥塞通知" class="headerlink" title="显式拥塞通知"></a>显式拥塞通知</h4><p>（ECN, Explicit Congestion Notification）</p>
+<p><img src="D:\TyporaImages\image-20250617031307726.png" alt="image-20250617031307726"></p>
+<p><img src="D:\TyporaImages\image-20250617031319048.png" alt="image-20250617031319048"></p>
+<p><img src="D:\TyporaImages\image-20250617031358607.png" alt="image-20250617031358607"></p>
+<h4 id="TCP-平均吞吐量"><a href="#TCP-平均吞吐量" class="headerlink" title="TCP 平均吞吐量"></a>TCP 平均吞吐量</h4><p><img src="D:\TyporaImages\image-20250617031501832.png" alt="image-20250617031501832"></p>
+<h4 id="TCP公平性"><a href="#TCP公平性" class="headerlink" title="TCP公平性"></a>TCP公平性</h4><p><img src="D:\TyporaImages\image-20250617031713536.png" alt="image-20250617031713536"></p>
+<p>TCP 的 <strong>AIMD</strong>（加性增加、乘性减少）机制会自我调整，保证所有连接在长时间运行中趋于公平共享带宽。</p>
+<h2 id="四、网络层"><a href="#四、网络层" class="headerlink" title="四、网络层"></a>四、网络层</h2><h3 id="虚电路和数据报网络"><a href="#虚电路和数据报网络" class="headerlink" title="虚电路和数据报网络"></a>虚电路和数据报网络</h3><p><img src="D:\TyporaImages\image-20250617033334441.png" alt="image-20250617033334441"></p>
+<h3 id="数据报网络"><a href="#数据报网络" class="headerlink" title="数据报网络"></a>数据报网络</h3><p><img src="D:\TyporaImages\image-20250617033401623.png" alt="image-20250617033401623"></p>
+<h4 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h4><p><img src="D:\TyporaImages\image-20250617033604345.png" alt="image-20250617033604345"></p>
+<h3 id="路由器的工作原理"><a href="#路由器的工作原理" class="headerlink" title="路由器的工作原理"></a>路由器的工作原理</h3><h4 id="两个功能"><a href="#两个功能" class="headerlink" title="两个功能"></a>两个功能</h4><p><img src="D:\TyporaImages\image-20250617034335159.png" alt="image-20250617034335159"></p>
+<h4 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h4><p><img src="D:\TyporaImages\image-20250617033936348.png" alt="image-20250617033936348"></p>
+<h4 id="输入端口功能"><a href="#输入端口功能" class="headerlink" title="输入端口功能"></a>输入端口功能</h4><p><img src="D:\TyporaImages\image-20250617113206243.png" alt="image-20250617113206243"></p>
+<p><img src="D:\TyporaImages\image-20250617113339831.png" alt="image-20250617113339831"></p>
+<h4 id="转发表"><a href="#转发表" class="headerlink" title="转发表"></a>转发表</h4><p><img src="D:\TyporaImages\image-20250617113350493.png" alt="image-20250617113350493"></p>
+<p><img src="D:\TyporaImages\image-20250617113735531.png" alt="image-20250617113735531"></p>
+<p><img src="D:\TyporaImages\image-20250617113810647.png" alt="image-20250617113810647"></p>
+<h4 id="最长前缀匹配"><a href="#最长前缀匹配" class="headerlink" title="最长前缀匹配"></a>最长前缀匹配</h4><p><img src="D:\TyporaImages\image-20250617113928952.png" alt="image-20250617113928952"></p>
+<p><img src="D:\TyporaImages\image-20250617114443771.png" alt="image-20250617114443771"></p>
+<h4 id="数据报分组的传输与转发表维护机制"><a href="#数据报分组的传输与转发表维护机制" class="headerlink" title="数据报分组的传输与转发表维护机制"></a>数据报分组的传输与转发表维护机制</h4><p><img src="D:\TyporaImages\image-20250617114942758.png" alt="image-20250617114942758"></p>
+<p>网络中有多个路径可用，路由器可能根据拥塞情况等做不同的选择。</p>
+<h4 id="交换结构"><a href="#交换结构" class="headerlink" title="交换结构"></a>交换结构</h4><h5 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h5><p><img src="D:\TyporaImages\image-20250617115729949.png" alt="image-20250617115729949"></p>
+<h5 id="三种交换结构"><a href="#三种交换结构" class="headerlink" title="三种交换结构"></a>三种交换结构</h5><p><img src="D:\TyporaImages\image-20250617115803615.png" alt="image-20250617115803615"></p>
+<h5 id="早期交换结构–经内存"><a href="#早期交换结构–经内存" class="headerlink" title="早期交换结构–经内存"></a>早期交换结构–经内存</h5><p><img src="D:\TyporaImages\image-20250617115943427.png" alt="image-20250617115943427"></p>
+<p><img src="D:\TyporaImages\image-20250617115858276.png" alt="image-20250617115858276"></p>
+<h6 id="内存结构的速率瓶颈"><a href="#内存结构的速率瓶颈" class="headerlink" title="内存结构的速率瓶颈"></a>内存结构的速率瓶颈</h6><p><img src="D:\TyporaImages\image-20250617120036654.png" alt="image-20250617120036654"></p>
+<h5 id="经总线的交换结构"><a href="#经总线的交换结构" class="headerlink" title="经总线的交换结构"></a>经总线的交换结构</h5><p><img src="D:\TyporaImages\image-20250617120151610.png" alt="image-20250617120151610"></p>
+<p>路由器交换带宽受&#x3D;&#x3D;总线速率&#x3D;&#x3D;限制。</p>
+<h5 id="经交换矩阵的交换结构"><a href="#经交换矩阵的交换结构" class="headerlink" title="经交换矩阵的交换结构"></a>经交换矩阵的交换结构</h5><p><img src="D:\TyporaImages\image-20250617120328288.png" alt="image-20250617120328288"></p>
+<p>输入可以<strong>并发转发</strong></p>
+<p><img src="D:\TyporaImages\image-20250617120455018.png" alt="image-20250617120455018"></p>
+<p><img src="D:\TyporaImages\image-20250617120531051.png" alt="image-20250617120531051"></p>
+<h5 id="排队（输入、输出端口）"><a href="#排队（输入、输出端口）" class="headerlink" title="排队（输入、输出端口）"></a>排队（输入、输出端口）</h5><h6 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h6><p><img src="D:\TyporaImages\image-20250617120649306.png" alt="image-20250617120649306"></p>
+<h6 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h6><p><img src="D:\TyporaImages\image-20250617120731074.png" alt="image-20250617120731074"></p>
+<p><img src="D:\TyporaImages\image-20250617120940740.png" alt="image-20250617120940740"></p>
+<p><img src="D:\TyporaImages\image-20250617121152390.png" alt="image-20250617121152390"></p>
+<p><img src="D:\TyporaImages\image-20250617121243707.png" alt="image-20250617121243707"></p>
+<h5 id="缓冲"><a href="#缓冲" class="headerlink" title="缓冲"></a>缓冲</h5><p><img src="D:\TyporaImages\image-20250617124132311.png" alt="image-20250617124132311"></p>
+<p><img src="D:\TyporaImages\image-20250617124235457.png" alt="image-20250617124235457"><img src="D:\TyporaImages\image-20250617124258475.png" alt="image-20250617124258475"></p>
+<h6 id="缓冲区管理"><a href="#缓冲区管理" class="headerlink" title="缓冲区管理"></a>缓冲区管理</h6><p><img src="D:\TyporaImages\image-20250617124706197.png" alt="image-20250617124706197"></p>
+<h4 id="路由器中哪些部分由硬件实现，哪些由软件实现？"><a href="#路由器中哪些部分由硬件实现，哪些由软件实现？" class="headerlink" title="路由器中哪些部分由硬件实现，哪些由软件实现？"></a>路由器中哪些部分由硬件实现，哪些由软件实现？</h4><p><img src="D:\TyporaImages\image-20250617124906958.png" alt="image-20250617124906958"></p>
+<p><img src="D:\TyporaImages\image-20250617124917990.png" alt="image-20250617124917990"></p>
+<p><img src="D:\TyporaImages\image-20250617124937316.png" alt="image-20250617124937316"></p>
+<h4 id="基于目的地转发-vs-通用转发"><a href="#基于目的地转发-vs-通用转发" class="headerlink" title="基于目的地转发 vs 通用转发"></a>基于目的地转发 vs 通用转发</h4><p><img src="D:\TyporaImages\image-20250617125022240.png" alt="image-20250617125022240"></p>
+<p><img src="D:\TyporaImages\image-20250617125041804.png" alt="image-20250617125041804"></p>
+<h3 id="网际协议：IPv4、寻址、IPv6及其他"><a href="#网际协议：IPv4、寻址、IPv6及其他" class="headerlink" title="网际协议：IPv4、寻址、IPv6及其他"></a>网际协议：IPv4、寻址、IPv6及其他</h3><h4 id="因特网中的网络层协议"><a href="#因特网中的网络层协议" class="headerlink" title="因特网中的网络层协议"></a>因特网中的网络层协议</h4><p>包含三大模块</p>
+<p><img src="D:\TyporaImages\image-20250617125236879.png" alt="image-20250617125236879"></p>
+<p><img src="D:\TyporaImages\image-20250617125251403.png" alt="image-20250617125251403"></p>
+<p><img src="D:\TyporaImages\image-20250617125337214.png"></p>
+<ol>
+<li>OSPF&#x2F;BGP → 路由算法 → 生成转发表</li>
+<li>分组到达路由器，查转发表 → 找到下一跳接口</li>
+<li>根据 IP 协议格式封装和处理</li>
+<li>出错时发 ICMP 控制信息</li>
+</ol>
+<h4 id="IP-数据报格式（IPv4）"><a href="#IP-数据报格式（IPv4）" class="headerlink" title="IP 数据报格式（IPv4）"></a>IP 数据报格式（IPv4）</h4><p><img src="D:\TyporaImages\image-20250617125512212.png" alt="image-20250617125512212"></p>
+<p><img src="D:\TyporaImages\image-20250617125635086.png" alt="image-20250617125635086"></p>
+<ul>
+<li><p>版本——占 4 位，指 IP 协议的版本，目前的 IP 协议版本号为 4 (即 IPv4)。</p>
+</li>
+<li><p>首部长度——占 4 位，可表示的最大数值是 15 个单位(&#x3D;&#x3D;一个单位为 4 字节&#x3D;&#x3D;)，因此 IP 的首部长度的最大值是 60 字节。</p>
+</li>
+<li><p>服 务 类 型——占 8 位，用来获得更好的服务。在旧标准中叫做&#x3D;&#x3D;服务类型&#x3D;&#x3D;，但实际上一直未被使用过。1998 年这个字段改名为&#x3D;&#x3D;区分服务&#x3D;&#x3D;。只有在使用区分服务（DiffServ）时，这个字段才起作用。在一般的情况下都不使用这个字段 </p>
+</li>
+<li><p>总长度——占 16 位，指&#x3D;&#x3D;首部和数据之和&#x3D;&#x3D;的长度，单位为字节，因此数据报的最大长度为 65535（2^16-1） 字节。总长度必须不超过最大传送单元 MTU。 </p>
+</li>
+<li><p>标识(identification) 占 16 位，它是一个计数器，用来产生数据报的标识。</p>
+</li>
+<li><p>标志(flag) 占 3 位，目前只有两位有意义。</p>
+<p>第1位：保留，一般置为0</p>
+<p>第2位：“不分片位”，DF (Don’t Fragment) 。           只有当 DF &#x3D;0 时才允许分片。 第3位：“更多片位”，MF (More Fragment)。           MF &#x3D;1 表示后面“还有分片”。MF &#x3D;0 表示最后一个分片。 </p>
+</li>
+<li><p>片偏移(13 位)指出：较长的分组在分片后，某片在原分组中的相对位置。片偏移以 8 个字节为偏移单位。</p>
+</li>
+<li><p><strong>生存时间</strong>(8 位)记为 <strong>TTL</strong> (Time To Live)，数据报在网络中可通过的路由器数的最大值。</p>
+<p>&#x3D;&#x3D;数据报每经过一台路由器，TTL值减1。若TTL&#x3D;0，则该数据报必须丢弃。&#x3D;&#x3D;</p>
+</li>
+<li><p>上层协议(8位)字段：指出此数据报携带的数据使用何种协议，以便目的主机的 IP 层将数据部分上交给哪个处理过程</p>
+</li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250617130315188.png" alt="image-20250617130315188"></p>
+<ul>
+<li>首部检验和(16 位)字段&#x3D;&#x3D;只检验数据报的首部&#x3D;&#x3D;不检验数据部分。这里不采用 CRC 检验码而采用简单的计算方法。</li>
+</ul>
+<h5 id="为什么TCP-IP在运输层-网络层都执行差错检测？"><a href="#为什么TCP-IP在运输层-网络层都执行差错检测？" class="headerlink" title="为什么TCP&#x2F;IP在运输层&#x2F;网络层都执行差错检测？"></a>为什么TCP&#x2F;IP在运输层&#x2F;网络层都执行差错检测？</h5><p><img src="D:\TyporaImages\image-20250617130703975.png" alt="image-20250617130703975"></p>
+<p><img src="D:\TyporaImages\image-20250617130741873.png" alt="image-20250617130741873"></p>
+<p><img src="D:\TyporaImages\image-20250617130828874.png" alt="image-20250617130828874"></p>
+<h5 id="校验和计算过程"><a href="#校验和计算过程" class="headerlink" title="校验和计算过程"></a>校验和计算过程</h5><p><img src="D:\TyporaImages\image-20250617131433736.png" alt="image-20250617131433736"></p>
+<p><img src="D:\TyporaImages\image-20250617131458377.png" alt="image-20250617131458377"></p>
+<p><img src="D:\TyporaImages\image-20250617131523765.png" alt="image-20250617131523765"></p>
+<ul>
+<li>源IP地址和目的IP地址都各占 4 字节</li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250617132133316.png" alt="image-20250617132133316"></p>
+<h4 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h4><p><img src="D:\TyporaImages\image-20250617132619630.png" alt="image-20250617132619630"></p>
+<h5 id="编址方法"><a href="#编址方法" class="headerlink" title="编址方法"></a>编址方法</h5><p><img src="D:\TyporaImages\image-20250617132750954.png" alt="image-20250617132750954"></p>
+<p><img src="D:\TyporaImages\image-20250617132834252.png" alt="image-20250617132834252"></p>
+<h5 id="1-分类-IP-地址"><a href="#1-分类-IP-地址" class="headerlink" title="1. &#x3D;&#x3D;分类 IP 地址&#x3D;&#x3D;"></a>1. &#x3D;&#x3D;分类 IP 地址&#x3D;&#x3D;</h5><p><img src="D:\TyporaImages\image-20250617132854185.png" alt="image-20250617132854185"></p>
+<p><img src="D:\TyporaImages\image-20250617132920883.png" alt="image-20250617132920883"></p>
+<p><img src="D:\TyporaImages\image-20250617151924888.png" alt="image-20250617151924888"></p>
+<h6 id="特殊IP地址"><a href="#特殊IP地址" class="headerlink" title="特殊IP地址"></a>特殊IP地址</h6><p><img src="D:\TyporaImages\image-20250617133150838.png" alt=" "></p>
+<p><img src="D:\TyporaImages\image-20250617133236472.png" alt="image-20250617133236472"></p>
+<h5 id="重要特点"><a href="#重要特点" class="headerlink" title="重要特点"></a>重要特点</h5><p>(1) IP地址是一种分等级的地址结构。</p>
+<p><img src="D:\TyporaImages\image-20250617133519857.png" alt="image-20250617133519857"></p>
+<p>(2) 实际上 IP 地址是标志一个主机（或路由器）和一条链路的接口</p>
+<p><img src="D:\TyporaImages\image-20250617133611106.png" alt="image-20250617133611106"></p>
+<p><img src="D:\TyporaImages\image-20250617133652681.png" alt="image-20250617133652681"></p>
+<h5 id="互联网中IP地址"><a href="#互联网中IP地址" class="headerlink" title="互联网中IP地址"></a>互联网中IP地址</h5><p>在同一个局域网上的&#x3D;&#x3D;主机或路由器&#x3D;&#x3D;，其 IP 地址的网络号必须一致</p>
+<p>路由器连接多个网络，&#x3D;&#x3D;每个接口都有一个属于对应网络的 IP 地址&#x3D;&#x3D;。</p>
+<ul>
+<li>路由器有几个接口，就有几个 IP 地址，每个 IP 属于对应的网络。</li>
+</ul>
+<p><img src="D:\TyporaImages\image-20250617134210215.png" alt="image-20250617134210215"></p>
+<h5 id="2-子网划分"><a href="#2-子网划分" class="headerlink" title="2.&#x3D;&#x3D;子网划分&#x3D;&#x3D;"></a>2.&#x3D;&#x3D;子网划分&#x3D;&#x3D;</h5><p><img src="D:\TyporaImages\image-20250617134319240.png" alt="image-20250617134319240"></p>
+<p><img src="D:\TyporaImages\image-20250617141638222.png" alt="image-20250617141638222"></p>
+<h6 id="子网掩码"><a href="#子网掩码" class="headerlink" title="&#x3D;&#x3D;子网掩码&#x3D;&#x3D;"></a>&#x3D;&#x3D;子网掩码&#x3D;&#x3D;</h6><p><img src="D:\TyporaImages\image-20250617141721555.png" alt="image-20250617141721555"></p>
+<p><img src="D:\TyporaImages\image-20250617142118384.png" alt="image-20250617142118384"></p>
+<p><img src="D:\TyporaImages\image-20250617142414232.png" alt="image-20250617142414232"></p>
+<h6 id="默认子网掩码"><a href="#默认子网掩码" class="headerlink" title="默认子网掩码"></a>默认子网掩码</h6><p><img src="D:\TyporaImages\image-20250617143005222.png" alt="image-20250617143005222"></p>
+<h6 id="IP-地址-AND-子网掩码-网络地址"><a href="#IP-地址-AND-子网掩码-网络地址" class="headerlink" title="(IP 地址) AND (子网掩码) &#x3D; 网络地址"></a>(IP 地址) AND (子网掩码) &#x3D; 网络地址</h6><p><img src="D:\TyporaImages\image-20250617143231135.png" alt="image-20250617143231135"></p>
+<h5 id="子网"><a href="#子网" class="headerlink" title="子网"></a>子网</h5><p><img src="D:\TyporaImages\image-20250617143514566.png" alt="image-20250617143514566"></p>
+<p><img src="D:\TyporaImages\image-20250617143532658.png" alt="image-20250617143532658"></p>
+<p><img src="D:\TyporaImages\image-20250617145130963.png" alt="image-20250617145130963"></p>
+<p><img src="D:\TyporaImages\image-20250617145815885.png" alt="image-20250617145815885"></p>
+<h5 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h5><p><img src="D:\TyporaImages\image-20250617150441389.png" alt="image-20250617150441389"></p>
+<p><img src="D:\TyporaImages\image-20250617150708309.png" alt="image-20250617150708309"></p>
+<p><img src="D:\TyporaImages\image-20250617150901602.png" alt="image-20250617150901602"></p>
+<p> <img src="D:\TyporaImages\image-20250617151415649.png" alt="image-20250617151415649"></p>
+<p><img src="D:\TyporaImages\image-20250617153156755.png" alt="image-20250617153156755"></p>
+<p><img src="D:\TyporaImages\image-20250617153446110.png" alt="image-20250617153446110"></p>
+<h5 id="基于子网的路由"><a href="#基于子网的路由" class="headerlink" title="基于子网的路由"></a>基于子网的路由</h5><p><img src="D:\TyporaImages\image-20250617154021302.png" alt="image-20250617154021302"></p>
+<p><img src="D:\TyporaImages\image-20250617154117715.png" alt="image-20250617154117715"></p>
+<p><img src="D:\TyporaImages\image-20250617154141684.png" alt="image-20250617154141684"></p>
+<h4 id="3-无分类编址-CIDR"><a href="#3-无分类编址-CIDR" class="headerlink" title="3. &#x3D;&#x3D;无分类编址 CIDR&#x3D;&#x3D;"></a>3. &#x3D;&#x3D;无分类编址 CIDR&#x3D;&#x3D;</h4><h5 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h5><p><img src="D:\TyporaImages\image-20250617154251857.png" alt="image-20250617154251857"></p>
+<p><img src="D:\TyporaImages\image-20250617154534619.png" alt="image-20250617154534619"></p>
+<p><img src="D:\TyporaImages\image-20250617154753029.png" alt="image-20250617154753029"></p>
+<p><img src="D:\TyporaImages\image-20250617155853914.png" alt="image-20250617155853914"></p>
+<p><img src="D:\TyporaImages\image-20250617155908298.png" alt="image-20250617155908298"></p>
+<h5 id="路由聚合-构成超网"><a href="#路由聚合-构成超网" class="headerlink" title="路由聚合&#x2F;构成超网"></a>路由聚合&#x2F;构成超网</h5><p><img src="D:\TyporaImages\image-20250617161030871.png" alt="image-20250617161030871"></p>
+<p>  <img src="D:\TyporaImages\image-20250617161512638.png" alt="image-20250617161512638"></p>
+<p><img src="D:\TyporaImages\image-20250617161559911.png" alt="image-20250617161559911"></p>
+<h5 id="定长-变长的子网掩码"><a href="#定长-变长的子网掩码" class="headerlink" title="定长&amp;变长的子网掩码"></a>定长&amp;变长的子网掩码</h5><p><img src="D:\TyporaImages\image-20250617162119847.png" alt="image-20250617162119847"></p>
+<p>FLSM</p>
+<p><img src="D:\TyporaImages\image-20250617162243506.png" alt="image-20250617162243506"></p>
+<p>2^n</p>
+<p>VLSM</p>
+<p><img src="D:\TyporaImages\image-20250617163011568.png" alt="image-20250617163011568"></p>
+<p><img src="D:\TyporaImages\image-20250617163307505.png" alt="image-20250617163307505"></p>
+<p><img src="D:\TyporaImages\image-20250617161808473.png" alt="image-20250617161808473"></p>
+<h4 id="获取IP地址"><a href="#获取IP地址" class="headerlink" title="获取IP地址"></a>获取IP地址</h4><p><img src="D:\TyporaImages\image-20250617170352635.png" alt="image-20250617170352635"></p>
+<h5 id="DHCP协议（动态主机配置协议）"><a href="#DHCP协议（动态主机配置协议）" class="headerlink" title="DHCP协议（动态主机配置协议）"></a>DHCP协议（动态主机配置协议）</h5><p><img src="D:\TyporaImages\image-20250617180508568.png" alt="image-20250617180508568"></p>
+<h6 id="工作过程"><a href="#工作过程" class="headerlink" title="工作过程"></a>工作过程</h6><p><img src="D:\TyporaImages\image-20250617180622396.png" alt="image-20250617180622396"></p>
+<p><img src="D:\TyporaImages\image-20250617180635136.png" alt="image-20250617180635136"></p>
+<p><img src="D:\TyporaImages\image-20250617180945643.png" alt="image-20250617180945643"></p>
+<p><img src="D:\TyporaImages\image-20250617181003210.png" alt="image-20250617181003210"></p>
+<p><img src="D:\TyporaImages\image-20250617181126455.png" alt="image-20250617181126455"></p>
+<p><img src="D:\TyporaImages\image-20250617182157039.png" alt="image-20250617182157039"></p>
+<p><img src="D:\TyporaImages\image-20250617182350389.png" alt="image-20250617182350389"></p>
+<p><img src="D:\TyporaImages\image-20250617182434950.png" alt="image-20250617182434950"></p>
+<p><img src="D:\TyporaImages\image-20250617182507649.png" alt="image-20250617182507649"></p>
+<p>客户端无 IP ——发送广播 DHCP DISCOVER<br>        ↓<br>服务器回应可用地址 ——DHCP OFFER<br>        ↓<br>客户端请求使用某 IP ——DHCP REQUEST<br>        ↓<br>服务器确认并分配 ——DHCP ACK<br>        ↓<br>（以后可能发送 RELEASE 释放地址）</p>
+<h5 id="组织机构如何获取IP-地址？"><a href="#组织机构如何获取IP-地址？" class="headerlink" title="组织机构如何获取IP 地址？"></a>组织机构如何获取IP 地址？</h5><p><img src="D:\TyporaImages\image-20250617184019997.png" alt="image-20250617184019997"></p>
+<p>ISP 拥有一个 <code>/20</code> 地址块后，可以通过**改变子网掩码长度（CIDR）*<em>将其划分为多个 <code>/23</code> 地址块，每个分配给一个组织，从而*<em>合理分配地址，节约空间，避免浪费</em></em>。</p>
+<p><img src="D:\TyporaImages\image-20250617184047547.png" alt="image-20250617184047547"></p>
+<h4 id="NAT-网络地址转换"><a href="#NAT-网络地址转换" class="headerlink" title="NAT: 网络地址转换"></a>NAT: 网络地址转换</h4><h5 id="NAT-的动机和基本原理"><a href="#NAT-的动机和基本原理" class="headerlink" title="NAT 的动机和基本原理"></a>NAT 的动机和基本原理</h5><p><img src="D:\TyporaImages\image-20250617184849227.png" alt="image-20250617184849227"></p>
+<p><img src="D:\TyporaImages\image-20250617184333071.png" alt="image-20250617184333071"></p>
+<p><img src="D:\TyporaImages\image-20250617184352258.png" alt="image-20250617184352258"></p>
+<p><img src="D:\TyporaImages\image-20250617184423713.png" alt="image-20250617184423713"></p>
+<h5 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h5><p><img src="D:\TyporaImages\image-20250617184442135.png" alt="image-20250617184442135"></p>
+<h5 id="工作机制"><a href="#工作机制" class="headerlink" title="工作机制"></a>工作机制</h5><p><img src="D:\TyporaImages\image-20250617185000676.png" alt="image-20250617185000676"><img src="D:\TyporaImages\image-20250617185701804.png" alt="image-20250617185701804"></p>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p><img src="D:\TyporaImages\image-20250617185734621.png" alt="image-20250617185734621"></p>
+<h5 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h5><p><img src="D:\TyporaImages\image-20250617185833127.png" alt="image-20250617185833127"></p>
+<h4 id="ICMP-因特网控制报文协议"><a href="#ICMP-因特网控制报文协议" class="headerlink" title="ICMP 因特网控制报文协议"></a>ICMP 因特网控制报文协议</h4><p><img src="D:\TyporaImages\image-20250617185924596.png" alt="image-20250617185924596"></p>
+<h5 id="ICMP-报文类型及对应常见代码"><a href="#ICMP-报文类型及对应常见代码" class="headerlink" title="ICMP 报文类型及对应常见代码"></a>ICMP 报文类型及对应常见代码</h5><p><img src="D:\TyporaImages\image-20250617185959726.png" alt="image-20250617185959726"></p>
+<p><img src="D:\TyporaImages\image-20250617190344472.png" alt="image-20250617190344472"></p>
+<h5 id="Traceroute-和-ICMP"><a href="#Traceroute-和-ICMP" class="headerlink" title="Traceroute 和 ICMP"></a>Traceroute 和 ICMP</h5><h6 id="工作流程详解"><a href="#工作流程详解" class="headerlink" title="工作流程详解"></a>工作流程详解</h6><ol>
+<li><strong>发送 UDP 报文，逐步增加 TTL 值</strong>：<ul>
+<li>发送第一个 UDP 报文，<code>TTL=1</code>；</li>
+<li>第二个 <code>TTL=2</code>；</li>
+<li>依此类推……</li>
+</ul>
+</li>
+<li><strong>当 TTL 用尽时，路由器的行为</strong>：<ul>
+<li>路由器会丢弃该数据报；</li>
+<li>返回一个 <strong>ICMP “超时” 报文（type 11, code 0）</strong>；</li>
+<li>报文中包含了该路由器的 IP 地址（和主机名）；</li>
+</ul>
+</li>
+<li><strong>源主机接收到 ICMP 报文</strong>：<ul>
+<li>获取该路由器 IP；</li>
+<li>计算从发送到收到 ICMP 的 RTT（Round-Trip Time）；</li>
+<li>每个 TTL 值会重复发送三次，统计平均 RTT；</li>
+</ul>
+</li>
+<li><strong>何时停止发送？</strong></li>
+<li><img src="D:\TyporaImages\image-20250617190624051.png" alt="image-20250617190624051"><ul>
+<li>当数据报最终抵达目标主机；</li>
+<li>目标主机收到无法识别的 UDP 报文（通常使用较高的端口号，目标未监听）；</li>
+<li>于是返回 ICMP 报文 <strong>“端口不可达”（type 3, code 3）</strong>；</li>
+<li>Traceroute 根据这个 ICMP 报文判断“到达目的地”，停止追踪。</li>
+</ul>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>ICMP 类型</th>
+<th>Code</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>type 11</td>
+<td>0</td>
+<td>Time Exceeded（TTL 用尽）</td>
+</tr>
+<tr>
+<td>type 3</td>
+<td>3</td>
+<td>Destination Unreachable（端口不可达）</td>
+</tr>
+</tbody></table>
+<p><img src="D:\TyporaImages\image-20250617190657658.png" alt="image-20250617190657658"></p>
+<h4 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h4><p><img src="D:\TyporaImages\image-20250617190728485.png" alt="image-20250617190728485"></p>
+<h5 id="首部"><a href="#首部" class="headerlink" title="首部"></a>首部</h5><p><img src="D:\TyporaImages\image-20250617191010341.png" alt="image-20250617191010341"></p>
+<h5 id="与IPv4比较"><a href="#与IPv4比较" class="headerlink" title="与IPv4比较"></a>与IPv4比较</h5><p><img src="D:\TyporaImages\image-20250617191030710.png" alt="image-20250617191030710"></p>
+<h5 id="扩展首部"><a href="#扩展首部" class="headerlink" title="扩展首部"></a>扩展首部</h5><p><img src="D:\TyporaImages\image-20250617191153678.png" alt="image-20250617191153678"></p>
+<h5 id="地址表示"><a href="#地址表示" class="headerlink" title="地址表示"></a>地址表示</h5><p><img src="D:\TyporaImages\image-20250617191258203.png" alt="image-20250617191258203"></p>
+<p><img src="D:\TyporaImages\image-20250617191527083.png" alt="image-20250617191527083"></p>
+<p><img src="D:\TyporaImages\image-20250617191617753.png" alt="image-20250617191617753"></p>
+<h5 id="从IPv4-过渡到-IPv6"><a href="#从IPv4-过渡到-IPv6" class="headerlink" title="从IPv4 过渡到 IPv6"></a>从IPv4 过渡到 IPv6</h5><h6 id="隧道"><a href="#隧道" class="headerlink" title="隧道"></a>隧道</h6><p><img src="D:\TyporaImages\image-20250617191708553.png" alt="image-20250617191708553"></p>
+<p>隧道：在IPv4路由器之间作为IPv4数据报中的有效载荷携带IPv6数据报（“数据包中的数据包”）在其他情况下广泛使用的隧道（4G &#x2F; 5G）</p>
+<p><img src="D:\TyporaImages\image-20250617191858245.png" alt="image-20250617191858245"></p>
+<p><img src="D:\TyporaImages\image-20250617192232022.png" alt="image-20250617192232022"></p>
+<p><img src="D:\TyporaImages\image-20250617192245238.png" alt="image-20250617192245238"></p>
+<p><img src="D:\TyporaImages\image-20250617192322740.png" alt="image-20250617192322740"></p>
+<p><img src="D:\TyporaImages\image-20250617192350207.png" alt="image-20250617192350207"></p>
+<h3 id="通用转发和SDN"><a href="#通用转发和SDN" class="headerlink" title="通用转发和SDN"></a>通用转发和SDN</h3><h4 id="流表抽象"><a href="#流表抽象" class="headerlink" title="流表抽象"></a>流表抽象</h4><p><img src="D:\TyporaImages\image-20250617193754546.png" alt="image-20250617193754546"></p>
+<p><img src="D:\TyporaImages\image-20250617194000539.png" alt="image-20250617194000539"></p>
+<p><img src="D:\TyporaImages\image-20250617194100680.png" alt="image-20250617194100680"></p>
+<p><img src="D:\TyporaImages\image-20250617194232525.png" alt="image-20250617194232525"></p>
+<p><img src="D:\TyporaImages\image-20250617194402491.png" alt="image-20250617194402491"></p>
+<h3 id="选路算法"><a href="#选路算法" class="headerlink" title="选路算法"></a>选路算法</h3><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p><img src="D:\TyporaImages\image-20250618175551236.png" alt="image-20250618175551236"></p>
+<h4 id="LS链路状态路由算法"><a href="#LS链路状态路由算法" class="headerlink" title="LS链路状态路由算法"></a>LS链路状态路由算法</h4><p><img src="D:\TyporaImages\image-20250619021050042.png" alt="image-20250619021050042"></p>
+<h4 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h4><p><img src="D:\TyporaImages\image-20250618175835370.png" alt="image-20250618175835370"></p>
+<p><img src="D:\TyporaImages\image-20250618175859883.png" alt="image-20250618175859883"></p>
+<h5 id="路由震荡？"><a href="#路由震荡？" class="headerlink" title="路由震荡？"></a>路由震荡？</h5><p><img src="D:\TyporaImages\image-20250619020901586.png" alt="image-20250619020901586"></p>
+<h3 id="距离向量路由算法DV算法"><a href="#距离向量路由算法DV算法" class="headerlink" title="距离向量路由算法DV算法"></a>距离向量路由算法DV算法</h3><p><img src="D:\TyporaImages\image-20250619023949882.png" alt="image-20250619023949882"></p>
+<h4 id="基于BF动态规划"><a href="#基于BF动态规划" class="headerlink" title="基于BF动态规划"></a>基于BF动态规划</h4><p><img src="D:\TyporaImages\image-20250619024029774.png" alt="image-20250619024029774"></p>
+<p><img src="D:\TyporaImages\image-20250619024209436.png" alt="image-20250619024209436"></p>
+<p><img src="D:\TyporaImages\image-20250619024316447.png" alt="image-20250619024316447"></p>
+<p><img src="D:\TyporaImages\image-20250619024954303.png" alt="image-20250619024954303"></p>
+<p><img src="D:\TyporaImages\image-20250619030018593.png" alt="image-20250619030018593"></p>
+<h3 id="LSvsDV"><a href="#LSvsDV" class="headerlink" title="LSvsDV"></a>LSvsDV</h3><p><img src="D:\TyporaImages\image-20250619024848080.png" alt="image-20250619024848080"></p>
+<p><img src="D:\TyporaImages\image-20250619024916606.png" alt="image-20250619024916606"></p>
+<h3 id="层次选路"><a href="#层次选路" class="headerlink" title="层次选路"></a>层次选路</h3><p><img src="D:\TyporaImages\image-20250619030709486.png" alt="image-20250619030709486"></p>
+<p><img src="D:\TyporaImages\image-20250619030732735.png" alt="image-20250619030732735"></p>
+<h4 id="OSPF"><a href="#OSPF" class="headerlink" title="OSPF"></a>OSPF</h4><p><img src="D:\TyporaImages\image-20250619030852722.png" alt="image-20250619030852722"></p>
+<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><p><img src="D:\TyporaImages\image-20250619030914672.png" alt="image-20250619030914672"></p>
+<h5 id="层次-OSPF"><a href="#层次-OSPF" class="headerlink" title="层次 OSPF"></a>层次 OSPF</h5><p><img src="D:\TyporaImages\image-20250619031129352.png" alt="image-20250619031129352"></p>
+<h4 id="Internet-域间选路-BGP"><a href="#Internet-域间选路-BGP" class="headerlink" title="Internet 域间选路: BGP"></a>Internet 域间选路: BGP</h4><p>BGP（边界网关协议）是 Internet 上<strong>自治系统（AS）之间的核心路由协议</strong>，被称为“事实上的标准”。</p>
+<p><img src="D:\TyporaImages\image-20250619031447066.png" alt="image-20250619031447066"></p>
+<p><img src="D:\TyporaImages\image-20250619031543521.png" alt="image-20250619031543521"></p>
+<p><img src="D:\TyporaImages\image-20250619031737462.png" alt="image-20250619031737462"></p>
+<p><img src="D:\TyporaImages\image-20250619031922938.png" alt="image-20250619031922938"></p>
+<p>当路由器得知一个新的前缀时，就在它的转发表中为该前缀创建一个项。</p>
+<h5 id="路径属性-和-BGP-路由"><a href="#路径属性-和-BGP-路由" class="headerlink" title="路径属性 和 BGP 路由"></a>路径属性 和 BGP 路由</h5><p><img src="D:\TyporaImages\image-20250619032214039.png" alt="image-20250619032214039"></p>
+<h5 id="BGP-路由选择"><a href="#BGP-路由选择" class="headerlink" title="BGP 路由选择"></a>BGP 路由选择</h5><p><img src="D:\TyporaImages\image-20250619032243621.png" alt="image-20250619032243621"></p>
+<h5 id="BGP-报文"><a href="#BGP-报文" class="headerlink" title="BGP 报文"></a>BGP 报文</h5><p><img src="D:\TyporaImages\image-20250619032325817.png" alt="image-20250619032325817"></p>
+<h5 id="为什么AS内选路和AS间选路采用不同的协议"><a href="#为什么AS内选路和AS间选路采用不同的协议" class="headerlink" title="为什么AS内选路和AS间选路采用不同的协议 ?"></a>为什么AS内选路和AS间选路采用不同的协议 ?</h5><p><img src="D:\TyporaImages\image-20250619032526951.png" alt="image-20250619032526951"></p>
+<h3 id="SDN"><a href="#SDN" class="headerlink" title="SDN"></a>SDN</h3><p><img src="D:\TyporaImages\image-20250619032644439.png" alt="image-20250619032644439"></p>
+<h4 id="SDN体系结构的4个关键特征"><a href="#SDN体系结构的4个关键特征" class="headerlink" title="SDN体系结构的4个关键特征"></a>SDN体系结构的4个关键特征</h4><p><img src="D:\TyporaImages\image-20250619033036636.png" alt="image-20250619033036636"></p>
+<h3 id="SDN：通用转发"><a href="#SDN：通用转发" class="headerlink" title="SDN：通用转发"></a>SDN：通用转发</h3><p><img src="D:\TyporaImages\image-20250619033122206.png" alt="image-20250619033122206"></p>
+<h3 id="SDN—数据平面交换机"><a href="#SDN—数据平面交换机" class="headerlink" title="SDN—数据平面交换机"></a>SDN—数据平面交换机</h3><p><img src="D:\TyporaImages\image-20250619033153764.png" alt="image-20250619033153764"></p>
+<h3 id="SDN—控制器"><a href="#SDN—控制器" class="headerlink" title="SDN—控制器"></a>SDN—控制器</h3><p><img src="D:\TyporaImages\image-20250619033226446.png" alt="image-20250619033226446"></p>
+<h3 id="SDN—网络控制应用程序"><a href="#SDN—网络控制应用程序" class="headerlink" title="SDN—网络控制应用程序"></a>SDN—网络控制应用程序</h3><h2 id="网络层：总结"><a href="#网络层：总结" class="headerlink" title="网络层：总结"></a>网络层：总结</h2><p><img src="D:\TyporaImages\image-20250619033325443.png" alt="image-20250619033325443"></p>
+<p><img src="D:\TyporaImages\image-20250619033341914.png" alt="image-20250619033341914"></p>
+<p><img src="D:\TyporaImages\image-20250619033350907.png" alt="image-20250619033350907"></p>
+<h2 id="五、数据链路层"><a href="#五、数据链路层" class="headerlink" title="五、数据链路层"></a>五、数据链路层</h2><p><img src="D:\TyporaImages\image-20250619033506729.png" alt="image-20250619033506729"></p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><img src="D:\TyporaImages\image-20250619033541382.png" alt="image-20250619033541382"></p>
+<h4 id="链路层提供的服务"><a href="#链路层提供的服务" class="headerlink" title="链路层提供的服务"></a>链路层提供的服务</h4><p><img src="D:\TyporaImages\image-20250619033701435.png" alt="image-20250619033701435"></p>
+<p><img src="D:\TyporaImages\image-20250619033934335.png" alt="image-20250619033934335"></p>
+<p>为什么要在链路层和端到端都实现可靠传输？</p>
+<p><img src="D:\TyporaImages\image-20250619033846740.png" alt="image-20250619033846740"></p>
+<h4 id="链路层实现的位置"><a href="#链路层实现的位置" class="headerlink" title="链路层实现的位置"></a>链路层实现的位置</h4><p><img src="D:\TyporaImages\image-20250619034004952.png" alt="image-20250619034004952"></p>
+<h4 id="接口通信"><a href="#接口通信" class="headerlink" title="接口通信"></a>接口通信</h4><p><img src="D:\TyporaImages\image-20250619034109379.png" alt="image-20250619034109379"></p>
+<h3 id="差错检测和纠错"><a href="#差错检测和纠错" class="headerlink" title="差错检测和纠错"></a>差错检测和纠错</h3><p><img src="D:\TyporaImages\image-20250619034312449.png" alt="image-20250619034312449"></p>
+<p><img src="D:\TyporaImages\image-20250619034504729.png" alt="image-20250619034504729"></p>
+<p><img src="D:\TyporaImages\image-20250619034610087.png" alt="image-20250619034610087"></p>
+<p><img src="D:\TyporaImages\image-20250619034720616.png" alt="image-20250619034720616"></p>
+<h4 id="三种主要差错检测技术"><a href="#三种主要差错检测技术" class="headerlink" title="三种主要差错检测技术"></a>三种主要差错检测技术</h4><p><img src="D:\TyporaImages\image-20250619034757076.png" alt="image-20250619034757076"></p>
+<h5 id="比特奇偶校验"><a href="#比特奇偶校验" class="headerlink" title="比特奇偶校验"></a>比特奇偶校验</h5><p><img src="D:\TyporaImages\image-20250619034924163.png" alt="image-20250619034924163"></p>
+<p><img src="D:\TyporaImages\image-20250619035008971.png" alt="image-20250619035008971"></p>
+<p><img src="D:\TyporaImages\image-20250619035508844.png" alt="image-20250619035508844"></p>
+<p><img src="D:\TyporaImages\image-20250619035526460.png" alt="image-20250619035526460"></p>
+<p><strong>在二维奇偶校验方法中不可能纠正两位错误。</strong></p>
+<h5 id="Internet校验和方法"><a href="#Internet校验和方法" class="headerlink" title="Internet校验和方法"></a>Internet校验和方法</h5><p><img src="D:\TyporaImages\image-20250619035746874.png" alt="image-20250619035746874"></p>
+<p><img src="D:\TyporaImages\image-20250619035804321.png" alt="image-20250619035804321"></p>
+<h5 id="循环冗余检测"><a href="#循环冗余检测" class="headerlink" title="循环冗余检测"></a>循环冗余检测</h5><p><img src="D:\TyporaImages\image-20250619035951488.png" alt="image-20250619035951488"></p>
+<p><img src="D:\TyporaImages\image-20250619040033773.png" alt="image-20250619040033773"></p>
+<h6 id="模2运算"><a href="#模2运算" class="headerlink" title="模2运算"></a>模2运算</h6><p><img src="D:\TyporaImages\image-20250619040212558.png" alt="image-20250619040212558"></p>
+<p>“相同为0， 不同为1”</p>
+<h6 id="计算R（CRC比特）"><a href="#计算R（CRC比特）" class="headerlink" title="计算R（CRC比特）"></a>计算R（CRC比特）</h6><p><img src="D:\TyporaImages\image-20250619040246319.png" alt="image-20250619040246319"></p>
+<p><img src="D:\TyporaImages\image-20250619040839754.png" alt="image-20250619040839754"></p>
+<p>模2除法（用异或代替减法）</p>
+<p><img src="D:\TyporaImages\image-20250619042520458.png" alt="image-20250619042520458"></p>
+<h6 id="循环冗余码CRC的特点"><a href="#循环冗余码CRC的特点" class="headerlink" title="循环冗余码CRC的特点"></a>循环冗余码CRC的特点</h6><p><img src="D:\TyporaImages\image-20250619042730313.png" alt="image-20250619042730313"></p>
+<h5 id="差错检测方法比较"><a href="#差错检测方法比较" class="headerlink" title="差错检测方法比较"></a>差错检测方法比较</h5><p><img src="D:\TyporaImages\image-20250619042902679.png" alt="image-20250619042902679"></p>
+<h3 id="多路访问链路和协议"><a href="#多路访问链路和协议" class="headerlink" title="多路访问链路和协议"></a>多路访问链路和协议</h3><p><img src="D:\TyporaImages\image-20250619043020399.png" alt="image-20250619043020399"><img src="D:\TyporaImages\image-20250619043137226.png" alt="image-20250619043137226"></p>
+<h4 id="多路访问协议类型（三类）"><a href="#多路访问协议类型（三类）" class="headerlink" title="多路访问协议类型（三类）"></a>多路访问协议类型（三类）</h4><p><img src="D:\TyporaImages\image-20250619043242670.png" alt="image-20250619043242670"></p>
+<h4 id="1-1时分多路访问"><a href="#1-1时分多路访问" class="headerlink" title="1.1时分多路访问"></a>1.1时分多路访问</h4><p><img src="D:\TyporaImages\image-20250619045344826.png" alt="image-20250619045344826"></p>
+<h5 id="特点-2"><a href="#特点-2" class="headerlink" title="特点"></a>特点</h5><p><img src="D:\TyporaImages\image-20250619045403588.png" alt="image-20250619045403588"></p>
+<h4 id="1-2频分多路访问FDMA"><a href="#1-2频分多路访问FDMA" class="headerlink" title="1.2频分多路访问FDMA"></a>1.2频分多路访问FDMA</h4><p><img src="D:\TyporaImages\image-20250619045446053.png" alt="image-20250619045446053"></p>
+<h4 id="1-3码分多路访问CDMA"><a href="#1-3码分多路访问CDMA" class="headerlink" title="1.3码分多路访问CDMA"></a>1.3码分多路访问CDMA</h4><p><img src="D:\TyporaImages\image-20250619045540254.png" alt="image-20250619045540254"></p>
+<h4 id="2-随机访问协议"><a href="#2-随机访问协议" class="headerlink" title="2.随机访问协议"></a>2.随机访问协议</h4><p><img src="D:\TyporaImages\image-20250619045734152.png" alt="image-20250619045734152"></p>
+<h5 id="ALOHA"><a href="#ALOHA" class="headerlink" title="ALOHA"></a>ALOHA</h5><h5 id="CSMA（载波侦听多路访问）"><a href="#CSMA（载波侦听多路访问）" class="headerlink" title="CSMA（载波侦听多路访问）"></a>CSMA（载波侦听多路访问）</h5><p><img src="D:\TyporaImages\image-20250619050211039.png" alt="image-20250619050211039"></p>
+<p><img src="D:\TyporaImages\image-20250619050314983.png" alt="image-20250619050314983"></p>
+<p><img src="D:\TyporaImages\image-20250619050330794.png" alt="image-20250619050330794"></p>
+<h5 id="带冲突检测的CSMA-CSMA-CD"><a href="#带冲突检测的CSMA-CSMA-CD" class="headerlink" title="带冲突检测的CSMA(CSMA&#x2F;CD)"></a>带冲突检测的CSMA(CSMA&#x2F;CD)</h5><p><img src="D:\TyporaImages\image-20250619050358947.png" alt="image-20250619050358947"></p>
+<p><img src="D:\TyporaImages\image-20250619050434172.png" alt="image-20250619050434172"></p>
+<h6 id="CSMA-CD协议工作流程"><a href="#CSMA-CD协议工作流程" class="headerlink" title="CSMA&#x2F;CD协议工作流程"></a>CSMA&#x2F;CD协议工作流程</h6><p><img src="D:\TyporaImages\image-20250619050533123.png" alt="image-20250619050533123"></p>
+<p><img src="D:\TyporaImages\image-20250619050815241.png" alt="image-20250619050815241"></p>
+<p><img src="D:\TyporaImages\image-20250619050920894.png" alt="image-20250619050920894"></p>
+<p>最短帧长*最短帧发送时间</p>
+<h6 id="以太网CSMA-CD的运行机制"><a href="#以太网CSMA-CD的运行机制" class="headerlink" title="以太网CSMA&#x2F;CD的运行机制"></a>以太网CSMA&#x2F;CD的运行机制</h6><p><img src="D:\TyporaImages\image-20250619051044234.png" alt="image-20250619051044234"></p>
+<p><img src="D:\TyporaImages\image-20250619051059169.png" alt="image-20250619051059169"></p>
+<h6 id="CSMA-CD效率"><a href="#CSMA-CD效率" class="headerlink" title="CSMA&#x2F;CD效率"></a>CSMA&#x2F;CD效率</h6><p><img src="D:\TyporaImages\image-20250619051228177.png" alt="image-20250619051228177"></p>
+<h4 id="3-轮流协议"><a href="#3-轮流协议" class="headerlink" title="3.轮流协议"></a>3.轮流协议</h4><h5 id="轮询协议（Polling）"><a href="#轮询协议（Polling）" class="headerlink" title="轮询协议（Polling）"></a><strong>轮询协议（Polling）</strong></h5><p><img src="D:\TyporaImages\image-20250619051925708.png" alt="image-20250619051925708"></p>
+<h5 id="令牌传递协议（Token-Passing）"><a href="#令牌传递协议（Token-Passing）" class="headerlink" title="令牌传递协议（Token Passing）"></a><strong>令牌传递协议（Token Passing）</strong></h5><p><img src="D:\TyporaImages\image-20250619052011481.png" alt="image-20250619052011481"></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="D:\TyporaImages\image-20250619052036529.png" alt="image-20250619052036529"></p>
+<h3 id="交换局域网"><a href="#交换局域网" class="headerlink" title="交换局域网"></a>交换局域网</h3><p><img src="D:\TyporaImages\image-20250619052121482.png" alt="image-20250619052121482"></p>
+<h4 id="常见的网络拓扑结构"><a href="#常见的网络拓扑结构" class="headerlink" title="常见的网络拓扑结构"></a>常见的网络拓扑结构</h4><p><img src="D:\TyporaImages\image-20250619052141073.png" alt="image-20250619052141073"></p>
+<p><img src="D:\TyporaImages\image-20250619052151782.png" alt="image-20250619052151782"></p>
+<p><img src="D:\TyporaImages\image-20250619052202283.png" alt="image-20250619052202283"></p>
+<p><img src="D:\TyporaImages\image-20250619052212873.png" alt="image-20250619052212873"></p>
+<p><img src="D:\TyporaImages\image-20250619052222588.png" alt="image-20250619052222588"></p>
+<h4 id="计算机与局域网的连接"><a href="#计算机与局域网的连接" class="headerlink" title="计算机与局域网的连接"></a>计算机与局域网的连接</h4><p><img src="D:\TyporaImages\image-20250619052322889.png" alt="image-20250619052322889"></p>
+<h4 id="局域网体系结构"><a href="#局域网体系结构" class="headerlink" title="局域网体系结构"></a>局域网体系结构</h4><p><img src="D:\TyporaImages\image-20250619052338609.png" alt="image-20250619052338609"></p>
+<p><img src="D:\TyporaImages\image-20250619052419021.png" alt="image-20250619052419021"></p>
+<h4 id="链路层寻址和ARP"><a href="#链路层寻址和ARP" class="headerlink" title="&#x3D;&#x3D;链路层寻址和ARP&#x3D;&#x3D;"></a>&#x3D;&#x3D;链路层寻址和ARP&#x3D;&#x3D;</h4><p><img src="D:\TyporaImages\image-20250619052626844.png" alt="image-20250619052626844"></p>
+<p><strong>局域网中每个网卡都有唯一的局域网地址</strong></p>
+<h5 id="MAC地址分配"><a href="#MAC地址分配" class="headerlink" title="MAC地址分配"></a>MAC地址分配</h5><p><img src="D:\TyporaImages\image-20250619052732043.png" alt="image-20250619052732043"></p>
+<h5 id="MAC地址识别"><a href="#MAC地址识别" class="headerlink" title="MAC地址识别"></a>MAC地址识别</h5><p><img src="D:\TyporaImages\image-20250619052847397.png" alt="image-20250619052847397"></p>
+<h6 id="节点的3种不同地址表示"><a href="#节点的3种不同地址表示" class="headerlink" title="节点的3种不同地址表示"></a>节点的3种不同地址表示</h6><p><img src="D:\TyporaImages\image-20250619052940925.png" alt="image-20250619052940925"></p>
+<h4 id="ARP-Address-Resolution-Protocol-地址解析协议"><a href="#ARP-Address-Resolution-Protocol-地址解析协议" class="headerlink" title="&#x3D;&#x3D;ARP&#x3D;&#x3D;(Address Resolution Protocol): 地址解析协议"></a>&#x3D;&#x3D;ARP&#x3D;&#x3D;(Address Resolution Protocol): 地址解析协议</h4><p><img src="D:\TyporaImages\image-20250619053223201.png" alt="image-20250619053223201"></p>
+<p><img src="D:\TyporaImages\image-20250619053300480.png" alt="image-20250619053300480"><img src="D:\TyporaImages\image-20250619053411264.png" alt="image-20250619053411264"></p>
+<p><img src="D:\TyporaImages\image-20250619053910902.png" alt="image-20250619053910902"></p>
+<h4 id="以太网-Ethernet"><a href="#以太网-Ethernet" class="headerlink" title="以太网(Ethernet)"></a>以太网(Ethernet)</h4><p><img src="D:\TyporaImages\image-20250619054148203.png" alt="image-20250619054148203"></p>
+<p><img src="D:\TyporaImages\image-20250619054211941.png" alt="image-20250619054211941"></p>
+<h5 id="以太网链路层控制技术"><a href="#以太网链路层控制技术" class="headerlink" title="以太网链路层控制技术"></a>以太网链路层控制技术</h5><p><img src="D:\TyporaImages\image-20250619054346576.png" alt="image-20250619054346576"></p>
+<h5 id="以太网的帧结构"><a href="#以太网的帧结构" class="headerlink" title="以太网的帧结构"></a>以太网的帧结构</h5><p><img src="D:\TyporaImages\image-20250619054423575.png" alt="image-20250619054423575"></p>
+<p><img src="D:\TyporaImages\image-20250619054608450.png" alt="image-20250619054608450"></p>
+<p><img src="D:\TyporaImages\image-20250619054639960.png" alt="image-20250619054639960"></p>
+<p><img src="D:\TyporaImages\image-20250619054717237.png" alt="image-20250619054717237"></p>
+<p><img src="D:\TyporaImages\image-20250619054736141.png" alt="image-20250619054736141"></p>
+<p><img src="D:\TyporaImages\image-20250619054804835.png" alt="image-20250619054804835"></p>
+<p><img src="D:\TyporaImages\image-20250619054829131.png" alt="image-20250619054829131"></p>
+<h5 id="以太网-不可靠的无连接服务"><a href="#以太网-不可靠的无连接服务" class="headerlink" title="以太网: &#x3D;&#x3D;不可靠的无连接服务&#x3D;&#x3D;"></a>以太网: &#x3D;&#x3D;不可靠的无连接服务&#x3D;&#x3D;</h5><p><img src="D:\TyporaImages\image-20250619054920343.png" alt="image-20250619054920343"></p>
+<h3 id="链路层交换机"><a href="#链路层交换机" class="headerlink" title="链路层交换机"></a>链路层交换机</h3><p><img src="D:\TyporaImages\image-20250619055024050.png" alt="image-20250619055024050"></p>
+<h4 id="支持多节点同时传输"><a href="#支持多节点同时传输" class="headerlink" title="支持多节点同时传输"></a>支持多节点同时传输</h4><p><img src="D:\TyporaImages\image-20250619055112847.png" alt="image-20250619055112847"></p>
+<h4 id="转发表-1"><a href="#转发表-1" class="headerlink" title="转发表"></a>转发表</h4><p><img src="D:\TyporaImages\image-20250619055149393.png" alt="image-20250619055149393"></p>
+<h5 id="自学习"><a href="#自学习" class="headerlink" title="自学习"></a>自学习</h5><p><img src="D:\TyporaImages\image-20250619055308835.png" alt="image-20250619055308835"></p>
+<h4 id="数据帧的过滤-转发"><a href="#数据帧的过滤-转发" class="headerlink" title="数据帧的过滤&#x2F;转发"></a>数据帧的过滤&#x2F;转发</h4><p><img src="D:\TyporaImages\image-20250619055348618.png" alt="image-20250619055348618"></p>
+<h4 id="交换机互连"><a href="#交换机互连" class="headerlink" title="交换机互连"></a>交换机互连</h4><p><img src="D:\TyporaImages\image-20250619055458669.png" alt="image-20250619055458669"></p>
+<p><img src="D:\TyporaImages\image-20250619060012974.png" alt="image-20250619060012974"></p>
+<p><img src="D:\TyporaImages\image-20250619060032618.png" alt="image-20250619060032618"></p>
+<h4 id="交换机的交换特点"><a href="#交换机的交换特点" class="headerlink" title="交换机的交换特点"></a>交换机的交换特点</h4><p><img src="D:\TyporaImages\image-20250619060719831.png" alt="image-20250619060719831"></p>
+<h5 id="交换方式1-存储转发"><a href="#交换方式1-存储转发" class="headerlink" title="交换方式1.存储转发"></a>交换方式1.存储转发</h5><p><img src="D:\TyporaImages\image-20250619060814181.png" alt="image-20250619060814181"></p>
+<h5 id="交换方式2-快速分组"><a href="#交换方式2-快速分组" class="headerlink" title="交换方式2.快速分组"></a>交换方式2.快速分组</h5><p><img src="D:\TyporaImages\image-20250619060903299.png" alt="image-20250619060903299"></p>
+<p><img src="D:\TyporaImages\image-20250619060925911.png" alt="image-20250619060925911"></p>
+<p><img src="D:\TyporaImages\image-20250619060939719.png" alt="image-20250619060939719"></p>
+<h4 id="三层交换机"><a href="#三层交换机" class="headerlink" title="三层交换机"></a>三层交换机</h4><p><img src="D:\TyporaImages\image-20250619061102932.png" alt="image-20250619061102932"></p>
+<h5 id="交换机制"><a href="#交换机制" class="headerlink" title="交换机制"></a>交换机制</h5><p><img src="D:\TyporaImages\image-20250619061511788.png" alt="image-20250619061511788"></p>
+<p><img src="D:\TyporaImages\image-20250619061608325.png" alt="image-20250619061608325"></p>
+<h5 id="三层交换机的工作原理"><a href="#三层交换机的工作原理" class="headerlink" title="三层交换机的工作原理"></a>三层交换机的工作原理</h5><p><img src="D:\TyporaImages\image-20250619061921564.png" alt="image-20250619061921564"></p>
+<h4 id="交换机-vs-路由器"><a href="#交换机-vs-路由器" class="headerlink" title="交换机 vs. 路由器"></a>交换机 vs. 路由器</h4><p><img src="D:\TyporaImages\image-20250619062052325.png" alt="image-20250619062052325"></p>
+<h4 id="交换机的优缺点"><a href="#交换机的优缺点" class="headerlink" title="交换机的优缺点"></a>交换机的优缺点</h4><p><img src="D:\TyporaImages\image-20250619062115840.png" alt="image-20250619062115840"></p>
+<h4 id="路由器的优缺点"><a href="#路由器的优缺点" class="headerlink" title="路由器的优缺点"></a>路由器的优缺点</h4><p><img src="D:\TyporaImages\image-20250619062140787.png" alt="image-20250619062140787"></p>
+<p><img src="D:\TyporaImages\image-20250619062204152.png" alt="image-20250619062204152"></p>
+<h3 id="VLAN"><a href="#VLAN" class="headerlink" title="VLAN"></a>VLAN</h3><p>Virtual Local Area Network（虚拟局域网）</p>
+<p><img src="D:\TyporaImages\image-20250619062818063.png" alt="image-20250619062818063"></p>
+<p><img src="D:\TyporaImages\image-20250619062845904.png" alt="image-20250619062845904"></p>
+<p><img src="D:\TyporaImages\image-20250619062911760.png" alt="image-20250619062911760"></p>
+<p><img src="D:\TyporaImages\image-20250619062939949.png" alt="image-20250619062939949"></p>
+<p><img src="D:\TyporaImages\image-20250619063118105.png" alt="image-20250619063118105"></p>
+<p><img src="D:\TyporaImages\image-20250619063157644.png" alt="image-20250619063157644"></p>
+<h4 id="跨越多个交换机的-VLAN"><a href="#跨越多个交换机的-VLAN" class="headerlink" title="跨越多个交换机的 VLAN"></a>跨越多个交换机的 VLAN</h4><p><img src="D:\TyporaImages\image-20250619063445258.png" alt="image-20250619063445258"></p>
+<h3 id="链路虚拟化：网络作为链路层"><a href="#链路虚拟化：网络作为链路层" class="headerlink" title="链路虚拟化：网络作为链路层"></a>链路虚拟化：网络作为链路层</h3><h4 id="多协议标签交换"><a href="#多协议标签交换" class="headerlink" title="多协议标签交换"></a>多协议标签交换</h4><p>Multiprotocol label switching (MPLS)</p>
+<p><img src="D:\TyporaImages\image-20250619063849804.png" alt="image-20250619063849804"></p>
+<p><img src="D:\TyporaImages\image-20250619063925862.png" alt="image-20250619063925862"></p>
+<h5 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h5><p><img src="D:\TyporaImages\image-20250619064203737.png" alt="image-20250619064203737"></p>
+<p><img src="D:\TyporaImages\image-20250619064343118.png" alt="image-20250619064343118"></p>
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://pp-blog-xi.vercel.app">PP</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://pp-blog-xi.vercel.app/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">https://pp-blog-xi.vercel.app/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/PP.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/07/04/pp-first-post/" title="My First Post"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">My First Post</div></div><div class="info-2"><div class="info-item-1">This is my first post. </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/PP.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">PP</div><div class="author-info-description">work work work work</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wataxiwwappdesu"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/wataxiwwappdesu" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">1.</span> <span class="toc-text">计算机网络</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%92%8CInternet"><span class="toc-number">1.1.</span> <span class="toc-text">一、计算机网络和Internet</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%BD%91%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">计网定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%9E%84%E6%88%90"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">具体构成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">服务描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#protocol"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">protocol</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Internet-%E6%A0%87%E5%87%86"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">Internet 标准</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%B9%E7%BC%98"><span class="toc-number">1.1.1.</span> <span class="toc-text">网络边缘</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%85%A5%E7%BD%91%E7%BB%9C%EF%BC%8C%E7%89%A9%E7%90%86%E4%BB%8B%E8%B4%A8"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">接入网络，物理介质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-number">1.1.2.</span> <span class="toc-text">网络核心</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">&#x3D;&#x3D;电路交换&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">&#x3D;&#x3D;分组交换&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BC%A0%E8%BE%93%E6%97%B6%E5%BB%B6%EF%BC%88Transmission-Delay%EF%BC%89%EF%BC%9A"><span class="toc-number">1.1.2.2.1.</span> <span class="toc-text">分组传输时延（Transmission Delay）：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%A4%8D%E7%94%A8"><span class="toc-number">1.1.2.2.2.</span> <span class="toc-text">统计复用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E6%8B%A5%E5%A1%9E"><span class="toc-number">1.1.2.2.3.</span> <span class="toc-text">处理拥塞</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2%E7%BD%91%E7%BB%9C%E4%B8%AD%E7%9A%84-%E5%BB%B6%E8%BF%9F-%E3%80%81%E4%B8%A2%E5%A4%B1%E5%92%8C%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.1.2.2.4.</span> <span class="toc-text">分组交换网络中的&#x3D;&#x3D;延迟&#x3D;&#x3D;、丢失和吞吐量</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%BC%BA%E5%BA%A6"><span class="toc-number">1.1.2.2.4.1.</span> <span class="toc-text">流量强度</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%90%9E%E5%90%90%E9%87%8Fbps"><span class="toc-number">1.1.2.2.4.2.</span> <span class="toc-text">网络吞吐量bps</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">对比</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link"><span class="toc-number">1.1.2.3.1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E5%AE%BD%E8%A1%A8%E7%A4%BA%E7%BD%91%E7%BB%9C%E4%B8%AD-%E5%8D%95%E4%BD%8D%E6%97%B6%E9%97%B4-%E5%86%85%E8%83%BD%E5%A4%9F%E4%BC%A0%E8%BE%93%E7%9A%84%E6%95%B0%E6%8D%AE%E9%87%8F"><span class="toc-number">1.1.3.</span> <span class="toc-text">带宽表示网络中&#x3D;&#x3D;单位时间&#x3D;&#x3D;内能够传输的数据量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP-UDP"><span class="toc-number">1.1.4.</span> <span class="toc-text">TCP&amp;UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%B1%82-%E6%9C%8D%E5%8A%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.5.</span> <span class="toc-text">协议层   服务模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E9%80%9A%E4%BF%A1"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">逻辑通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Internet-%E5%8D%8F%E8%AE%AE%E6%A0%88"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">Internet 协议栈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BD%93%E3%80%81%E5%8D%8F%E8%AE%AE%E3%80%81%E6%9C%8D%E5%8A%A1%E5%92%8C%E6%9C%8D%E5%8A%A1%E8%AE%BF%E9%97%AE%E7%82%B9"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">实体、协议、服务和服务访问点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-7-%E6%94%BB%E5%87%BB%E5%A8%81%E8%83%81%E4%B8%8B%E7%9A%84%E7%BD%91%E7%BB%9C"><span class="toc-number">1.1.6.</span> <span class="toc-text">1.7 攻击威胁下的网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E6%A4%8D%E5%85%A5%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">1、植入恶意软件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%97%85%E6%AF%92-%E8%A0%95%E8%99%AB"><span class="toc-number">1.1.6.1.1.</span> <span class="toc-text">病毒&amp;蠕虫</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%94%BB%E5%87%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%92%8C%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD"><span class="toc-number">1.1.6.1.2.</span> <span class="toc-text">2. 攻击服务器和网络基础设施</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%97%85%E6%8E%A2%E5%88%86%E7%BB%84"><span class="toc-number">1.1.6.1.3.</span> <span class="toc-text">3. 嗅探分组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E4%BC%AA%E8%A3%85"><span class="toc-number">1.1.6.1.4.</span> <span class="toc-text">4 . 伪装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E4%BF%AE%E6%94%B9%E6%88%96%E5%88%A0%E9%99%A4%E6%8A%A5%E6%96%87"><span class="toc-number">1.1.6.1.5.</span> <span class="toc-text">5.修改或删除报文</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.2.</span> <span class="toc-text">二、应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">网络应用程序体系结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E6%8E%A5%E5%8F%A3-%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-number">1.2.1.</span> <span class="toc-text">进程与计算机网络的接口-套接字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E8%BF%90%E8%BE%93%E5%8D%8F%E8%AE%AE%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1%EF%BC%9ATCP-UDP"><span class="toc-number">1.2.2.</span> <span class="toc-text">因特网运输协议提供的服务：TCP&amp;UDP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E5%BA%94%E7%94%A8%EF%BC%9A%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%EF%BC%8C%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">因特网应用：应用层协议，传输协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%BA%94%E7%94%A8%E5%92%8CHTTP%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text">Web应用和HTTP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP-%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">HTTP: 超文本传输协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">HTTP连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E4%B9%85HTTP%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.2.1.</span> <span class="toc-text">&#x3D;&#x3D;非持久HTTP连接&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BE%80%E8%BF%94%E6%97%B6%E9%97%B4RTT"><span class="toc-number">1.2.3.2.1.1.</span> <span class="toc-text">往返时间RTT</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E4%B9%85HTTP%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4%EF%BC%9A"><span class="toc-number">1.2.3.2.1.2.</span> <span class="toc-text">&#x3D;&#x3D;非持久HTTP响应时间：&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#TCP%E8%BF%9E%E6%8E%A5%E7%9A%84%E2%80%9C%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E2%80%9D%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.3.2.1.3.</span> <span class="toc-text">TCP连接的“三次握手”过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E4%B9%85HTTP%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">持久HTTP连接</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%9E%E6%B5%81%E6%B0%B4%E7%BA%BFvs%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.2.3.3.1.</span> <span class="toc-text">非流水线vs流水线</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5VS%E6%8C%81%E4%B9%85%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">非持久连接VS持久连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E9%A1%B5%E9%9D%A2%E6%97%B6%E9%97%B4%E5%88%86%E6%9E%90"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">HTTP请求页面时间分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">HTTP报文结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.3.6.0.1.</span> <span class="toc-text">常用方法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.2.3.6.0.2.</span> <span class="toc-text">响应状态码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP-2"><span class="toc-number">1.2.3.7.</span> <span class="toc-text">HTTP&#x2F;2</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HTTP3%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.2.3.7.1.</span> <span class="toc-text">HTTP3的改进</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTTP1%E3%80%812%E3%80%813"><span class="toc-number">1.2.3.7.2.</span> <span class="toc-text">HTTP1、2、3</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cookie"><span class="toc-number">1.2.3.8.</span> <span class="toc-text">Cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%85%E6%8B%AC%E5%9B%9B%E9%83%A8%E5%88%86"><span class="toc-number">1.2.3.8.1.</span> <span class="toc-text">包括四部分</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Web%E7%BC%93%E5%AD%98"><span class="toc-number">1.2.3.9.</span> <span class="toc-text">Web缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6GET%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.3.9.1.</span> <span class="toc-text">条件GET方法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.3.9.1.1.</span> <span class="toc-text">原理</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.3.9.2.</span> <span class="toc-text">过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E4%B8%AD%E7%9A%84%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="toc-number">1.2.4.</span> <span class="toc-text">因特网中的电子邮件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">电子邮件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E6%8A%A5%E6%96%87%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">发送报文过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SMTP"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">SMTP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%82%AE%E4%BB%B6%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">邮件访问协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SMTP-vs-HTTP"><span class="toc-number">1.2.4.4.1.</span> <span class="toc-text">SMTP vs HTTP</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#POP3"><span class="toc-number">1.2.4.5.</span> <span class="toc-text">POP3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BE%A8%E6%9E%90"><span class="toc-number">1.2.4.5.1.</span> <span class="toc-text">辨析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS-%E8%8B%B1%E7%89%B9%E7%BD%91%E7%9A%84%E7%9B%AE%E5%BD%95%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.5.</span> <span class="toc-text">DNS:英特网的目录服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">主要功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">分层架构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">查询方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F%E8%BE%A8%E6%9E%90"><span class="toc-number">1.2.5.3.1.</span> <span class="toc-text">查询方式辨析</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">域名解析过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%93%E5%AD%98"><span class="toc-number">1.2.5.5.</span> <span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DNS%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.5.6.</span> <span class="toc-text">DNS攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81DNS%E5%8A%AB%E6%8C%81"><span class="toc-number">1.2.5.6.1.</span> <span class="toc-text">1、DNS劫持</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E3%80%81%E7%BC%93%E5%AD%98%E6%8A%95%E6%AF%92"><span class="toc-number">1.2.5.6.2.</span> <span class="toc-text">2、缓存投毒</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E3%80%81DDOS%E6%94%BB%E5%87%BB-Distributed-Denial-of-Service"><span class="toc-number">1.2.5.6.3.</span> <span class="toc-text">3、DDOS攻击 (Distributed Denial of Service)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E3%80%81DNS%E6%AC%BA%E9%AA%97"><span class="toc-number">1.2.5.6.4.</span> <span class="toc-text">4、DNS欺骗</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%88%86%E5%8F%91%E7%BD%91%E7%BB%9CCDN"><span class="toc-number">1.2.6.</span> <span class="toc-text">内容分发网络CDN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81"><span class="toc-number">1.2.6.0.1.</span> <span class="toc-text">为什么需要</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">1.2.6.0.2.</span> <span class="toc-text">流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.6.0.3.</span> <span class="toc-text">两种部署方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E5%8D%87%E9%80%9F%E5%BA%A6%E3%80%81%E9%99%8D%E4%BD%8E%E5%8E%8B%E5%8A%9B%E3%80%81%E5%A2%9E%E5%BC%BA%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">提升速度、降低压力、增强稳定性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E8%BF%90%E8%BE%93%E5%B1%82"><span class="toc-number">1.3.</span> <span class="toc-text">三、运输层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%BE%93%E5%B1%82%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">运输层服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">两个基本的传输层协议</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3"><span class="toc-number">1.3.2.</span> <span class="toc-text">多路复用和多路分解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%97%E6%8E%A5%E5%AD%97"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">套接字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E8%BF%9E%E6%8E%A5%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">无连接多路分解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-1"><span class="toc-number">1.3.2.3.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-number">1.3.2.3.2.</span> <span class="toc-text">例子</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E6%98%AF%E6%97%A0%E8%BF%9E%E6%8E%A5%EF%BC%9F"><span class="toc-number">1.3.2.3.3.</span> <span class="toc-text">为什么说是无连接？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">面向连接的多路分解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9B%E5%85%83%E7%BB%84%E6%A0%87%E8%AF%86"><span class="toc-number">1.3.2.4.1.</span> <span class="toc-text">四元组标识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8"><span class="toc-number">1.3.2.4.2.</span> <span class="toc-text">多路复用</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%92%8C%E5%A4%9A%E8%B7%AF%E5%88%86%E8%A7%A3%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">多路复用和多路分解小结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E8%BF%9E%E6%8E%A5%E4%BC%A0%E8%BE%93-UDP"><span class="toc-number">1.3.3.</span> <span class="toc-text">无连接传输: UDP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8-UDP-%E4%B8%8A%E5%AE%9E%E7%8E%B0%E5%8F%AF%E9%9D%A0%E4%BC%A0%E8%BE%93"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">在 UDP 上实现可靠传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP%E6%98%AF%E9%9D%A2%E5%90%91%E6%8A%A5%E6%96%87%E7%9A%84"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">UDP是面向报文的</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.3.3.1.</span> <span class="toc-text">封装过程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP%EF%BC%9A%E4%BC%A0%E8%BE%93%E5%B1%82%E5%8A%A8%E4%BD%9C"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">UDP：传输层动作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP-%E9%A6%96%E9%83%A8%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">UDP 首部格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP-%E6%A0%A1%E9%AA%8C%E5%92%8C"><span class="toc-number">1.3.3.6.</span> <span class="toc-text">UDP 校验和</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BC%AA%E9%A6%96%E9%83%A8"><span class="toc-number">1.3.3.6.0.1.</span> <span class="toc-text">伪首部</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%A3%80%E6%B5%8B%E5%87%BA"><span class="toc-number">1.3.3.6.0.2.</span> <span class="toc-text">不一定检测出</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UDP%E4%BC%98%E7%82%B9"><span class="toc-number">1.3.3.7.</span> <span class="toc-text">UDP优点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.4.</span> <span class="toc-text">可靠数据传输原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">实现机制</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%81%9C%E6%AD%A2-%E7%AD%89%E5%BE%85%E5%8D%8F%E8%AE%AESW"><span class="toc-number">1.3.4.1.1.</span> <span class="toc-text">停止-等待协议SW</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87"><span class="toc-number">1.3.4.1.1.1.</span> <span class="toc-text">信道利用率</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9B%9E%E9%80%80N%E5%B8%A7%E5%8D%8F%E8%AE%AEGBN"><span class="toc-number">1.3.4.1.2.</span> <span class="toc-text">回退N帧协议GBN</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E9%87%8D%E4%BC%A0%E5%8D%8F%E8%AE%AESR"><span class="toc-number">1.3.4.1.3.</span> <span class="toc-text">选择重传协议SR</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%8F%E8%AE%AE%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.4.1.4.</span> <span class="toc-text">流水线协议：总结</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%BC%A0%E8%BE%93TCP"><span class="toc-number">1.3.5.</span> <span class="toc-text">面向连接的传输TCP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E6%8A%A5%E6%96%87%E6%AE%B5"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">TCP报文段</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%A4%B1%E5%BA%8F%E6%8A%A5%E6%96%87%E6%AE%B5%EF%BC%9F"><span class="toc-number">1.3.5.1.0.1.</span> <span class="toc-text">处理失序报文段？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AETCP%E8%B6%85%E6%97%B6%E5%80%BC"><span class="toc-number">1.3.5.1.0.2.</span> <span class="toc-text">设置TCP超时值</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E5%8F%AF%E9%9D%A0%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.6.</span> <span class="toc-text">TCP可靠数据传输机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E9%87%8D%E4%BC%A0"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">快速重传</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E6%B5%81%E9%87%8F%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">TCP流量控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%81%E7%BB%AD%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="toc-number">1.3.7.1.</span> <span class="toc-text">持续计时器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.8.</span> <span class="toc-text">TCP连接管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.8.1.</span> <span class="toc-text">两次握手建立连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-number">1.3.8.2.</span> <span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-number">1.3.8.3.</span> <span class="toc-text">四次挥手</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.9.</span> <span class="toc-text">拥塞控制原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%9B%A0%E5%92%8C%E4%BB%A3%E4%BB%B7"><span class="toc-number">1.3.9.1.</span> <span class="toc-text">原因和代价</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.9.2.</span> <span class="toc-text">拥塞控制方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.9.2.1.</span> <span class="toc-text">端到端的拥塞控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%BE%85%E5%8A%A9%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.9.2.2.</span> <span class="toc-text">网络辅助拥塞控制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.10.</span> <span class="toc-text">TCP拥塞控制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#AIMD-%E6%8E%A2%E6%B5%8B%E5%B8%A6%E5%AE%BD"><span class="toc-number">1.3.10.1.</span> <span class="toc-text">AIMD 探测带宽</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.3.10.2.</span> <span class="toc-text">发送逻辑</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6%E7%AE%97%E6%B3%95"><span class="toc-number">1.3.10.3.</span> <span class="toc-text">拥塞控制算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E4%BB%8E%E6%85%A2%E5%90%AF%E5%8A%A8%E3%80%81%E6%8B%A5%E5%A1%9E%E9%81%BF%E5%85%8D%E5%88%87%E6%8D%A2%E5%88%B0%E5%BF%AB%E9%80%9F%E6%81%A2%E5%A4%8D"><span class="toc-number">1.3.10.4.</span> <span class="toc-text">TCP从慢启动、拥塞避免切换到快速恢复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%93%B6%E9%A2%88%E9%93%BE%E8%B7%AF"><span class="toc-number">1.3.10.5.</span> <span class="toc-text">瓶颈链路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%BB%B6%E8%BF%9F%E7%9A%84-TCP-%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.10.6.</span> <span class="toc-text">基于延迟的 TCP 拥塞控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E6%8B%A5%E5%A1%9E%E9%80%9A%E7%9F%A5"><span class="toc-number">1.3.10.7.</span> <span class="toc-text">显式拥塞通知</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP-%E5%B9%B3%E5%9D%87%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.3.10.8.</span> <span class="toc-text">TCP 平均吞吐量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TCP%E5%85%AC%E5%B9%B3%E6%80%A7"><span class="toc-number">1.3.10.9.</span> <span class="toc-text">TCP公平性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.4.</span> <span class="toc-text">四、网络层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E7%94%B5%E8%B7%AF%E5%92%8C%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">1.4.1.</span> <span class="toc-text">虚电路和数据报网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">1.4.2.</span> <span class="toc-text">数据报网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-1"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.3.</span> <span class="toc-text">路由器的工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">两个功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E7%AB%AF%E5%8F%A3%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">输入端口功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8F%91%E8%A1%A8"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">转发表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E9%95%BF%E5%89%8D%E7%BC%80%E5%8C%B9%E9%85%8D"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">最长前缀匹配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%88%86%E7%BB%84%E7%9A%84%E4%BC%A0%E8%BE%93%E4%B8%8E%E8%BD%AC%E5%8F%91%E8%A1%A8%E7%BB%B4%E6%8A%A4%E6%9C%BA%E5%88%B6"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">数据报分组的传输与转发表维护机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.7.</span> <span class="toc-text">交换结构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.3.7.1.</span> <span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E4%BA%A4%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.7.2.</span> <span class="toc-text">三种交换结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A9%E6%9C%9F%E4%BA%A4%E6%8D%A2%E7%BB%93%E6%9E%84%E2%80%93%E7%BB%8F%E5%86%85%E5%AD%98"><span class="toc-number">1.4.3.7.3.</span> <span class="toc-text">早期交换结构–经内存</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84%E7%9A%84%E9%80%9F%E7%8E%87%E7%93%B6%E9%A2%88"><span class="toc-number">1.4.3.7.3.1.</span> <span class="toc-text">内存结构的速率瓶颈</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E6%80%BB%E7%BA%BF%E7%9A%84%E4%BA%A4%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.7.4.</span> <span class="toc-text">经总线的交换结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%8F%E4%BA%A4%E6%8D%A2%E7%9F%A9%E9%98%B5%E7%9A%84%E4%BA%A4%E6%8D%A2%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.3.7.5.</span> <span class="toc-text">经交换矩阵的交换结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%92%E9%98%9F%EF%BC%88%E8%BE%93%E5%85%A5%E3%80%81%E8%BE%93%E5%87%BA%E7%AB%AF%E5%8F%A3%EF%BC%89"><span class="toc-number">1.4.3.7.6.</span> <span class="toc-text">排队（输入、输出端口）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BE%93%E5%85%A5"><span class="toc-number">1.4.3.7.6.1.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%BE%93%E5%87%BA"><span class="toc-number">1.4.3.7.6.2.</span> <span class="toc-text">输出</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%93%E5%86%B2"><span class="toc-number">1.4.3.7.7.</span> <span class="toc-text">缓冲</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BC%93%E5%86%B2%E5%8C%BA%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.3.7.7.1.</span> <span class="toc-text">缓冲区管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%AD%E5%93%AA%E4%BA%9B%E9%83%A8%E5%88%86%E7%94%B1%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%93%AA%E4%BA%9B%E7%94%B1%E8%BD%AF%E4%BB%B6%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="toc-number">1.4.3.8.</span> <span class="toc-text">路由器中哪些部分由硬件实现，哪些由软件实现？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E7%9B%AE%E7%9A%84%E5%9C%B0%E8%BD%AC%E5%8F%91-vs-%E9%80%9A%E7%94%A8%E8%BD%AC%E5%8F%91"><span class="toc-number">1.4.3.9.</span> <span class="toc-text">基于目的地转发 vs 通用转发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE%EF%BC%9AIPv4%E3%80%81%E5%AF%BB%E5%9D%80%E3%80%81IPv6%E5%8F%8A%E5%85%B6%E4%BB%96"><span class="toc-number">1.4.4.</span> <span class="toc-text">网际协议：IPv4、寻址、IPv6及其他</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%A0%E7%89%B9%E7%BD%91%E4%B8%AD%E7%9A%84%E7%BD%91%E7%BB%9C%E5%B1%82%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">因特网中的网络层协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP-%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F%EF%BC%88IPv4%EF%BC%89"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">IP 数据报格式（IPv4）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88TCP-IP%E5%9C%A8%E8%BF%90%E8%BE%93%E5%B1%82-%E7%BD%91%E7%BB%9C%E5%B1%82%E9%83%BD%E6%89%A7%E8%A1%8C%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%EF%BC%9F"><span class="toc-number">1.4.4.2.1.</span> <span class="toc-text">为什么TCP&#x2F;IP在运输层&#x2F;网络层都执行差错检测？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E5%92%8C%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-number">1.4.4.2.2.</span> <span class="toc-text">校验和计算过程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">IP地址</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BC%96%E5%9D%80%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.4.3.1.</span> <span class="toc-text">编址方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%88%86%E7%B1%BB-IP-%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.3.2.</span> <span class="toc-text">1. &#x3D;&#x3D;分类 IP 地址&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%89%B9%E6%AE%8AIP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.3.2.1.</span> <span class="toc-text">特殊IP地址</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E8%A6%81%E7%89%B9%E7%82%B9"><span class="toc-number">1.4.4.3.3.</span> <span class="toc-text">重要特点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%ADIP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.3.4.</span> <span class="toc-text">互联网中IP地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86"><span class="toc-number">1.4.4.3.5.</span> <span class="toc-text">2.&#x3D;&#x3D;子网划分&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-number">1.4.4.3.5.1.</span> <span class="toc-text">&#x3D;&#x3D;子网掩码&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-number">1.4.4.3.5.2.</span> <span class="toc-text">默认子网掩码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#IP-%E5%9C%B0%E5%9D%80-AND-%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.3.5.3.</span> <span class="toc-text">(IP 地址) AND (子网掩码) &#x3D; 网络地址</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%90%E7%BD%91"><span class="toc-number">1.4.4.3.6.</span> <span class="toc-text">子网</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86"><span class="toc-number">1.4.4.3.7.</span> <span class="toc-text">子网划分</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AD%90%E7%BD%91%E7%9A%84%E8%B7%AF%E7%94%B1"><span class="toc-number">1.4.4.3.8.</span> <span class="toc-text">基于子网的路由</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%97%A0%E5%88%86%E7%B1%BB%E7%BC%96%E5%9D%80-CIDR"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">3. &#x3D;&#x3D;无分类编址 CIDR&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9"><span class="toc-number">1.4.4.4.1.</span> <span class="toc-text">主要特点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%81%9A%E5%90%88-%E6%9E%84%E6%88%90%E8%B6%85%E7%BD%91"><span class="toc-number">1.4.4.4.2.</span> <span class="toc-text">路由聚合&#x2F;构成超网</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E9%95%BF-%E5%8F%98%E9%95%BF%E7%9A%84%E5%AD%90%E7%BD%91%E6%8E%A9%E7%A0%81"><span class="toc-number">1.4.4.4.3.</span> <span class="toc-text">定长&amp;变长的子网掩码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.4.5.</span> <span class="toc-text">获取IP地址</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DHCP%E5%8D%8F%E8%AE%AE%EF%BC%88%E5%8A%A8%E6%80%81%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">1.4.4.5.1.</span> <span class="toc-text">DHCP协议（动态主机配置协议）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.4.4.5.1.1.</span> <span class="toc-text">工作过程</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%84%E7%BB%87%E6%9C%BA%E6%9E%84%E5%A6%82%E4%BD%95%E8%8E%B7%E5%8F%96IP-%E5%9C%B0%E5%9D%80%EF%BC%9F"><span class="toc-number">1.4.4.5.2.</span> <span class="toc-text">组织机构如何获取IP 地址？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NAT-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.4.4.6.</span> <span class="toc-text">NAT: 网络地址转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#NAT-%E7%9A%84%E5%8A%A8%E6%9C%BA%E5%92%8C%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.4.6.1.</span> <span class="toc-text">NAT 的动机和基本原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.4.4.6.2.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="toc-number">1.4.4.6.3.</span> <span class="toc-text">工作机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.4.4.6.4.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%99%90%E5%88%B6"><span class="toc-number">1.4.4.6.5.</span> <span class="toc-text">限制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ICMP-%E5%9B%A0%E7%89%B9%E7%BD%91%E6%8E%A7%E5%88%B6%E6%8A%A5%E6%96%87%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.4.7.</span> <span class="toc-text">ICMP 因特网控制报文协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ICMP-%E6%8A%A5%E6%96%87%E7%B1%BB%E5%9E%8B%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%B8%B8%E8%A7%81%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.4.7.1.</span> <span class="toc-text">ICMP 报文类型及对应常见代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Traceroute-%E5%92%8C-ICMP"><span class="toc-number">1.4.4.7.2.</span> <span class="toc-text">Traceroute 和 ICMP</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.4.4.7.2.1.</span> <span class="toc-text">工作流程详解</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IPv6"><span class="toc-number">1.4.4.8.</span> <span class="toc-text">IPv6</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A6%96%E9%83%A8"><span class="toc-number">1.4.4.8.1.</span> <span class="toc-text">首部</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8EIPv4%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.4.8.2.</span> <span class="toc-text">与IPv4比较</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E9%A6%96%E9%83%A8"><span class="toc-number">1.4.4.8.3.</span> <span class="toc-text">扩展首部</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.4.4.8.4.</span> <span class="toc-text">地址表示</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8EIPv4-%E8%BF%87%E6%B8%A1%E5%88%B0-IPv6"><span class="toc-number">1.4.4.8.5.</span> <span class="toc-text">从IPv4 过渡到 IPv6</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%9A%A7%E9%81%93"><span class="toc-number">1.4.4.8.5.1.</span> <span class="toc-text">隧道</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E8%BD%AC%E5%8F%91%E5%92%8CSDN"><span class="toc-number">1.4.5.</span> <span class="toc-text">通用转发和SDN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E8%A1%A8%E6%8A%BD%E8%B1%A1"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">流表抽象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E8%B7%AF%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.6.</span> <span class="toc-text">选路算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LS%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.6.2.</span> <span class="toc-text">LS链路状态路由算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dijkstra"><span class="toc-number">1.4.6.3.</span> <span class="toc-text">Dijkstra</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E9%9C%87%E8%8D%A1%EF%BC%9F"><span class="toc-number">1.4.6.3.1.</span> <span class="toc-text">路由震荡？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%9D%E7%A6%BB%E5%90%91%E9%87%8F%E8%B7%AF%E7%94%B1%E7%AE%97%E6%B3%95DV%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.7.</span> <span class="toc-text">距离向量路由算法DV算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EBF%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">1.4.7.1.</span> <span class="toc-text">基于BF动态规划</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSvsDV"><span class="toc-number">1.4.8.</span> <span class="toc-text">LSvsDV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E9%80%89%E8%B7%AF"><span class="toc-number">1.4.9.</span> <span class="toc-text">层次选路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OSPF"><span class="toc-number">1.4.9.1.</span> <span class="toc-text">OSPF</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%98%E7%82%B9-1"><span class="toc-number">1.4.9.1.1.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1-OSPF"><span class="toc-number">1.4.9.1.2.</span> <span class="toc-text">层次 OSPF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Internet-%E5%9F%9F%E9%97%B4%E9%80%89%E8%B7%AF-BGP"><span class="toc-number">1.4.9.2.</span> <span class="toc-text">Internet 域间选路: BGP</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B7%AF%E5%BE%84%E5%B1%9E%E6%80%A7-%E5%92%8C-BGP-%E8%B7%AF%E7%94%B1"><span class="toc-number">1.4.9.2.1.</span> <span class="toc-text">路径属性 和 BGP 路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BGP-%E8%B7%AF%E7%94%B1%E9%80%89%E6%8B%A9"><span class="toc-number">1.4.9.2.2.</span> <span class="toc-text">BGP 路由选择</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BGP-%E6%8A%A5%E6%96%87"><span class="toc-number">1.4.9.2.3.</span> <span class="toc-text">BGP 报文</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88AS%E5%86%85%E9%80%89%E8%B7%AF%E5%92%8CAS%E9%97%B4%E9%80%89%E8%B7%AF%E9%87%87%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.9.2.4.</span> <span class="toc-text">为什么AS内选路和AS间选路采用不同的协议 ?</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN"><span class="toc-number">1.4.10.</span> <span class="toc-text">SDN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SDN%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%9A%844%E4%B8%AA%E5%85%B3%E9%94%AE%E7%89%B9%E5%BE%81"><span class="toc-number">1.4.10.1.</span> <span class="toc-text">SDN体系结构的4个关键特征</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN%EF%BC%9A%E9%80%9A%E7%94%A8%E8%BD%AC%E5%8F%91"><span class="toc-number">1.4.11.</span> <span class="toc-text">SDN：通用转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN%E2%80%94%E6%95%B0%E6%8D%AE%E5%B9%B3%E9%9D%A2%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.4.12.</span> <span class="toc-text">SDN—数据平面交换机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN%E2%80%94%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.13.</span> <span class="toc-text">SDN—控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SDN%E2%80%94%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.4.14.</span> <span class="toc-text">SDN—网络控制应用程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%9A%E6%80%BB%E7%BB%93"><span class="toc-number">1.5.</span> <span class="toc-text">网络层：总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">1.6.</span> <span class="toc-text">五、数据链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E6%8F%90%E4%BE%9B%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">链路层提供的服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">链路层实现的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E9%80%9A%E4%BF%A1"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">接口通信</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E5%92%8C%E7%BA%A0%E9%94%99"><span class="toc-number">1.6.2.</span> <span class="toc-text">差错检测和纠错</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E4%B8%BB%E8%A6%81%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E6%8A%80%E6%9C%AF"><span class="toc-number">1.6.2.1.</span> <span class="toc-text">三种主要差错检测技术</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AF%94%E7%89%B9%E5%A5%87%E5%81%B6%E6%A0%A1%E9%AA%8C"><span class="toc-number">1.6.2.1.1.</span> <span class="toc-text">比特奇偶校验</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Internet%E6%A0%A1%E9%AA%8C%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.2.1.2.</span> <span class="toc-text">Internet校验和方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A3%80%E6%B5%8B"><span class="toc-number">1.6.2.1.3.</span> <span class="toc-text">循环冗余检测</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%A8%A12%E8%BF%90%E7%AE%97"><span class="toc-number">1.6.2.1.3.1.</span> <span class="toc-text">模2运算</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97R%EF%BC%88CRC%E6%AF%94%E7%89%B9%EF%BC%89"><span class="toc-number">1.6.2.1.3.2.</span> <span class="toc-text">计算R（CRC比特）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E7%A0%81CRC%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">1.6.2.1.3.3.</span> <span class="toc-text">循环冗余码CRC的特点</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%E6%AF%94%E8%BE%83"><span class="toc-number">1.6.2.1.4.</span> <span class="toc-text">差错检测方法比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E9%93%BE%E8%B7%AF%E5%92%8C%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.3.</span> <span class="toc-text">多路访问链路和协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B%EF%BC%88%E4%B8%89%E7%B1%BB%EF%BC%89"><span class="toc-number">1.6.3.1.</span> <span class="toc-text">多路访问协议类型（三类）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1%E6%97%B6%E5%88%86%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE"><span class="toc-number">1.6.3.2.</span> <span class="toc-text">1.1时分多路访问</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E7%82%B9-2"><span class="toc-number">1.6.3.2.1.</span> <span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2%E9%A2%91%E5%88%86%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AEFDMA"><span class="toc-number">1.6.3.3.</span> <span class="toc-text">1.2频分多路访问FDMA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3%E7%A0%81%E5%88%86%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AECDMA"><span class="toc-number">1.6.3.4.</span> <span class="toc-text">1.3码分多路访问CDMA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%9A%8F%E6%9C%BA%E8%AE%BF%E9%97%AE%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.3.5.</span> <span class="toc-text">2.随机访问协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ALOHA"><span class="toc-number">1.6.3.5.1.</span> <span class="toc-text">ALOHA</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSMA%EF%BC%88%E8%BD%BD%E6%B3%A2%E4%BE%A6%E5%90%AC%E5%A4%9A%E8%B7%AF%E8%AE%BF%E9%97%AE%EF%BC%89"><span class="toc-number">1.6.3.5.2.</span> <span class="toc-text">CSMA（载波侦听多路访问）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%A6%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%E7%9A%84CSMA-CSMA-CD"><span class="toc-number">1.6.3.5.3.</span> <span class="toc-text">带冲突检测的CSMA(CSMA&#x2F;CD)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#CSMA-CD%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.6.3.5.3.1.</span> <span class="toc-text">CSMA&#x2F;CD协议工作流程</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91CSMA-CD%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.3.5.3.2.</span> <span class="toc-text">以太网CSMA&#x2F;CD的运行机制</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#CSMA-CD%E6%95%88%E7%8E%87"><span class="toc-number">1.6.3.5.3.3.</span> <span class="toc-text">CSMA&#x2F;CD效率</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%BD%AE%E6%B5%81%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.3.6.</span> <span class="toc-text">3.轮流协议</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AE%E8%AF%A2%E5%8D%8F%E8%AE%AE%EF%BC%88Polling%EF%BC%89"><span class="toc-number">1.6.3.6.1.</span> <span class="toc-text">轮询协议（Polling）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A4%E7%89%8C%E4%BC%A0%E9%80%92%E5%8D%8F%E8%AE%AE%EF%BC%88Token-Passing%EF%BC%89"><span class="toc-number">1.6.3.6.2.</span> <span class="toc-text">令牌传递协议（Token Passing）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.3.7.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.6.4.</span> <span class="toc-text">交换局域网</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.4.1.</span> <span class="toc-text">常见的网络拓扑结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%8E%E5%B1%80%E5%9F%9F%E7%BD%91%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.6.4.2.</span> <span class="toc-text">计算机与局域网的连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.4.3.</span> <span class="toc-text">局域网体系结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E5%AF%BB%E5%9D%80%E5%92%8CARP"><span class="toc-number">1.6.4.4.</span> <span class="toc-text">&#x3D;&#x3D;链路层寻址和ARP&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#MAC%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D"><span class="toc-number">1.6.4.4.1.</span> <span class="toc-text">MAC地址分配</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MAC%E5%9C%B0%E5%9D%80%E8%AF%86%E5%88%AB"><span class="toc-number">1.6.4.4.2.</span> <span class="toc-text">MAC地址识别</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%9A%843%E7%A7%8D%E4%B8%8D%E5%90%8C%E5%9C%B0%E5%9D%80%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.4.4.2.1.</span> <span class="toc-text">节点的3种不同地址表示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ARP-Address-Resolution-Protocol-%E5%9C%B0%E5%9D%80%E8%A7%A3%E6%9E%90%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.6.4.5.</span> <span class="toc-text">&#x3D;&#x3D;ARP&#x3D;&#x3D;(Address Resolution Protocol): 地址解析协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-Ethernet"><span class="toc-number">1.6.4.6.</span> <span class="toc-text">以太网(Ethernet)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E9%93%BE%E8%B7%AF%E5%B1%82%E6%8E%A7%E5%88%B6%E6%8A%80%E6%9C%AF"><span class="toc-number">1.6.4.6.1.</span> <span class="toc-text">以太网链路层控制技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E7%9A%84%E5%B8%A7%E7%BB%93%E6%9E%84"><span class="toc-number">1.6.4.6.2.</span> <span class="toc-text">以太网的帧结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%A5%E5%A4%AA%E7%BD%91-%E4%B8%8D%E5%8F%AF%E9%9D%A0%E7%9A%84%E6%97%A0%E8%BF%9E%E6%8E%A5%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.6.4.6.3.</span> <span class="toc-text">以太网: &#x3D;&#x3D;不可靠的无连接服务&#x3D;&#x3D;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.6.5.</span> <span class="toc-text">链路层交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%A4%9A%E8%8A%82%E7%82%B9%E5%90%8C%E6%97%B6%E4%BC%A0%E8%BE%93"><span class="toc-number">1.6.5.1.</span> <span class="toc-text">支持多节点同时传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8F%91%E8%A1%A8-1"><span class="toc-number">1.6.5.2.</span> <span class="toc-text">转发表</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%87%AA%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.6.5.2.1.</span> <span class="toc-text">自学习</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B8%A7%E7%9A%84%E8%BF%87%E6%BB%A4-%E8%BD%AC%E5%8F%91"><span class="toc-number">1.6.5.3.</span> <span class="toc-text">数据帧的过滤&#x2F;转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%BA%92%E8%BF%9E"><span class="toc-number">1.6.5.4.</span> <span class="toc-text">交换机互连</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E4%BA%A4%E6%8D%A2%E7%89%B9%E7%82%B9"><span class="toc-number">1.6.5.5.</span> <span class="toc-text">交换机的交换特点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F1-%E5%AD%98%E5%82%A8%E8%BD%AC%E5%8F%91"><span class="toc-number">1.6.5.5.1.</span> <span class="toc-text">交换方式1.存储转发</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%96%B9%E5%BC%8F2-%E5%BF%AB%E9%80%9F%E5%88%86%E7%BB%84"><span class="toc-number">1.6.5.5.2.</span> <span class="toc-text">交换方式2.快速分组</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA"><span class="toc-number">1.6.5.6.</span> <span class="toc-text">三层交换机</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%88%B6"><span class="toc-number">1.6.5.6.1.</span> <span class="toc-text">交换机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.5.6.2.</span> <span class="toc-text">三层交换机的工作原理</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA-vs-%E8%B7%AF%E7%94%B1%E5%99%A8"><span class="toc-number">1.6.5.7.</span> <span class="toc-text">交换机 vs. 路由器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.6.5.8.</span> <span class="toc-text">交换机的优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.6.5.9.</span> <span class="toc-text">路由器的优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLAN"><span class="toc-number">1.6.6.</span> <span class="toc-text">VLAN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E8%B6%8A%E5%A4%9A%E4%B8%AA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84-VLAN"><span class="toc-number">1.6.6.1.</span> <span class="toc-text">跨越多个交换机的 VLAN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E8%99%9A%E6%8B%9F%E5%8C%96%EF%BC%9A%E7%BD%91%E7%BB%9C%E4%BD%9C%E4%B8%BA%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="toc-number">1.6.7.</span> <span class="toc-text">链路虚拟化：网络作为链路层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%8D%8F%E8%AE%AE%E6%A0%87%E7%AD%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">1.6.7.1.</span> <span class="toc-text">多协议标签交换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%89%B9%E6%80%A7"><span class="toc-number">1.6.7.1.1.</span> <span class="toc-text">特性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#-1"><span class="toc-number">1.6.8.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="Untitled">Untitled</a><time datetime="2025-07-04T04:32:42.690Z" title="Created 2025-07-04 12:32:42">2025-07-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/04/pp-first-post/" title="My First Post">My First Post</a><time datetime="2025-07-04T04:00:00.000Z" title="Created 2025-07-04 12:00:00">2025-07-04</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/up.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2025 By PP</div><div class="footer_custom_text">work work work work</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
