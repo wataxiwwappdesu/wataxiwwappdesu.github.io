@@ -4,16 +4,16 @@
   
     
     <entry>
-      <title>数学公式测试</title>
-      <link href="/2025/07/06/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/"/>
-      <url>/2025/07/06/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B5%8B%E8%AF%95/</url>
+      <title>Day 1</title>
+      <link href="/2025/07/06/Day1/"/>
+      <url>/2025/07/06/Day1/</url>
       
-        <content type="html"><![CDATA[<p>\documentclass[20pt]{article}      % 文档类型：文章，字体20pt</p><p>\usepackage[utf8]{inputenc}        % 支持UTF-8编码<br>\usepackage[T1]{fontenc}           % 字体编码<br>\usepackage{geometry}              % 页面边距<br>\usepackage{amsmath, amssymb}      % 数学符号支持<br>\usepackage{graphicx}              % 插入图片<br>\usepackage{hyperref}              % 超链接<br>\usepackage{xeCJK}                 % 中文支持（需使用 xelatex 编译）<br>\setCJKmainfont{SimSun}            % 设置中文字体：宋体（可换成“Microsoft YaHei”等）</p><p>\geometry{a4paper, margin&#x3D;2.5cm}   % 设置纸张和边距</p><p>\title{Day 1}       % 标题<br>\author{PP}                   % 作者<br>\date{\today}                      % 日期，自动填入今天的日期</p><p>\begin{document}<br><br>\maketitle                        % 生成标题             % 生成目录<br>% \newpage<br><br>\section{引言}<br>大概是一些概率论的内容..<br><br>\section{}<br>\begin{itemize}<br>\item 几率 Odds(A)&#x3D;$\frac{P(A)}{1-P(A)}$   概率 P(A)<br>\item 几率的对数:Logit<br>\item 概率分布函数$\rightarrow$累积概率函数<br>\item 概率密度函数f(x)是分布函数F(X)的导函数。<br>\item 贝叶斯公式：$P(y|x)&#x3D;\frac{P(x|y)P(y)}{P(x)}$<br>\item 正态概率密度函数：$f(x)&#x3D;\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$<br>\item 混合高斯分布：[<br>P(x;\theta) &#x3D; \sum_{i&#x3D;1}^{k} \pi_iN(x;\mu_i,\Sigma_i)<br>]<br>x:观察到的样本数据；$\mu_i$:平均值；$\pi_i$:对应的系数，所有系数和为1；$\Sigma_i$:协方差<br>\item 泊松分布：描述某段时间内，事件发生的概率\<br>条件：\begin{itemize}<br>  \item 事件独立发生<br>\item 事件发生概率相同<br>\item 两事件不能在同一时刻发生<br>\item 一个区间内事件发生的概率与区间大小成比例<br>  \end{itemize}<br>则X为泊松随机变量.<br>$P(X&#x3D;x)&#x3D;\frac{\lambda^x}{x!}e^{-\lambda}$\<br>$\lambda$:指定区间事件发生的频率（不是概率）；x:事件数量<br>\end{itemize}<br><br><br><br><br>\end{document}</p>]]></content>
+        <content type="html"><![CDATA[<iframe src="/files/Day1.pdf" width="100%" height="600px">  This browser does not support PDF preview. Please click <a ref="/files/Day.pdf"> here to download </a>.</iframe>]]></content>
       
       
       <categories>
           
-          <category> 测试 </category>
+          <category> 学习 </category>
           
       </categories>
       
