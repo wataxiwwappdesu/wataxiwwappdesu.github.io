@@ -45,6 +45,17 @@
     
     
     <entry>
+      <title>Music</title>
+      <link href="/music/index.html"/>
+      <url>/music/index.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="🎵-我的-QQ-音乐歌单推荐："><a href="#🎵-我的-QQ-音乐歌单推荐：" class="headerlink" title="🎵 我的 QQ 音乐歌单推荐："></a>🎵 我的 QQ 音乐歌单推荐：</h2><div id="aplayer"></div><p><meting-js  server="tencent"  type="playlist"  id="9478757172"  fixed="true"  autoplay="false"  loop="all"  order="list"  preload="auto"  volume="0.8"/></p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -61,17 +72,6 @@
       <url>/link/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Music</title>
-      <link href="/music/index.html"/>
-      <url>/music/index.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="🎵-我的-QQ-音乐歌单推荐："><a href="#🎵-我的-QQ-音乐歌单推荐：" class="headerlink" title="🎵 我的 QQ 音乐歌单推荐："></a>🎵 我的 QQ 音乐歌单推荐：</h2><div id="aplayer"></div><p><meting-js  server="tencent"  type="playlist"  id="9478757172"  fixed="true"  autoplay="false"  loop="all"  order="list"  preload="auto"  volume="0.8"/></p>]]></content>
       
     </entry>
     
