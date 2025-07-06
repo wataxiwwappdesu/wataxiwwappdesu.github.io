@@ -4,16 +4,16 @@
   
     
     <entry>
-      <title>Day 1</title>
+      <title>机器学习笔记</title>
       <link href="/2025/07/06/Day1/"/>
       <url>/2025/07/06/Day1/</url>
       
-        <content type="html"><![CDATA[<iframe src="/files/Day1.pdf" width="100%" height="600px">  This browser does not support PDF preview. Please click <a ref="/files/Day.pdf"> here to download </a>.</iframe>]]></content>
+        <content type="html"><![CDATA[<h1 id="一、机器学习的数学理论理解"><a href="#一、机器学习的数学理论理解" class="headerlink" title="一、机器学习的数学理论理解"></a>一、机器学习的数学理论理解</h1><h2 id="2-数据的形态描述"><a href="#2-数据的形态描述" class="headerlink" title="2.数据的形态描述"></a>2.数据的形态描述</h2><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012021581.png" alt="image-20250707012021581"></p><h3 id="组合数推导"><a href="#组合数推导" class="headerlink" title="组合数推导"></a>组合数推导</h3><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012131419.png" alt="image-20250707012131419"></p><h3 id="幂律分布"><a href="#幂律分布" class="headerlink" title="幂律分布"></a>幂律分布</h3><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012218570.png" alt="image-20250707012218570"></p><h2 id="3-信息的数学表达"><a href="#3-信息的数学表达" class="headerlink" title="3.信息的数学表达"></a>3.信息的数学表达</h2><h3 id="自信息"><a href="#自信息" class="headerlink" title="自信息"></a>自信息</h3><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012339860.png" alt="image-20250707012339860"></p><h3 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h3><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012420868.png" alt="image-20250707012420868"></p><h3 id="信息增益"><a href="#信息增益" class="headerlink" title="信息增益"></a>信息增益</h3><p><img src="/../../Hexo_blog/pp_blog/source/assets/machine-learning/image-20250707012554116.png" alt="image-20250707012554116"></p>]]></content>
       
       
       <categories>
           
-          <category> 学习 </category>
+          <category> machine-learning </category>
           
       </categories>
       
@@ -52,6 +52,25 @@
       <categories>
           
           <category> 专业课学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaSE学习笔记</title>
+      <link href="/2025/07/04/JavaSE/"/>
+      <url>/2025/07/04/JavaSE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><ul><li>命令行Tab补全</li><li></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaSE </category>
           
       </categories>
       
